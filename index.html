@@ -281,16 +281,9 @@
             <form action="https://formspree.io/f/moqpdypa" method="POST">
                 <h3>Contact</h3>
                 <input placeholder="Name or company name" type="text" id="name" name="name" value="" required>
-                <i class="nameValid"></i>
                 <input placeholder="Email" type="email" id="email" name="email"
                     onblur="this.setAttribute('value', this.value);" value="" required>
-                <i class="emailValid"></i>
-                    <textarea placeholder="Message" rows="1" id="msg" name="message"></textarea>
-                    <i class="messageValid"></i>
-                <div class="notif">
-                    <p id="sent"></p>
-                    <p id="error"></p>
-                  </div>
+                    <textarea placeholder="Message" rows="1" id="msg" name="message" required></textarea>
                  <button type="submit">Send</button>
             </form>
         </div>
