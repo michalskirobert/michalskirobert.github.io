@@ -12,7 +12,7 @@
     "メール: $visitor_email.\n".
     "メッセージ: $message.\n";
 
-    $to = 'latablen@gmail.com';
+    $to = 'majointa@gmail.com';
     $headers = "From: $email_from \r\n";
     $headers .= "Reply To: $visitor_email \r\n";
     mail($to,$email_subject,$email_body,$headers);
