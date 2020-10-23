@@ -278,7 +278,7 @@
             <p>I would love to learn more about Node.JS, React.JS and even PHP - for me if I can understand more
                 back-end then I can be a really good front-end developer
             </p>
-            <form action="http://formspree.io/majointa@gmail.com" method="post">
+            <form action="https://formspree.io/f/moqpdypa" method="POST">
                 <h3>Contact</h3>
                 <input placeholder="Name or company name" type="text" id="name" name="name" value="" required>
                 <i class="nameValid"></i>
@@ -291,7 +291,7 @@
                     <p id="sent"></p>
                     <p id="error"></p>
                   </div>
-                <button type="button" onclick="sendMail()">Send</button>
+                 <button type="submit">Send</button>
             </form>
         </div>
         <img src="img/contact.jpg" alt="Warsaw" class="about-me__img">
@@ -342,6 +342,11 @@
         integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js"></script>
+      <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+  <script>
+    window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+    formbutton("create", {action: "https://formspree.io/f/moqpdypa"})
+  </script>
     <script src="js/index.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/mail.js"></script>
