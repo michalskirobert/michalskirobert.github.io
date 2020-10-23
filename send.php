@@ -4,22 +4,22 @@
     $visitor_email = $_POST['email'];
     $message = $_POST['message'];
 
-    $email_subject = "新しいメッセージを受け取りました";
-    $email_subject2 = "LA TABLE N: 新しいメッセージを受け取りました";
+    $email_subject = "Nowy e-mail ^^";
+    $email_subject2 = "$name, thanks for your email~";
 
     $email_body =
-    "名前: $name.\n".
-    "メール: $visitor_email.\n".
-    "メッセージ: $message.\n";
+    "Name: $name.\n".
+    "E-mail: $visitor_email.\n".
+    "Message: $message.\n";
 
-    $to = 'majointa@gmail.com';
+    $to = 'robertxmichalski@gmail.com';
     $headers = "From: $email_from \r\n";
     $headers .= "Reply To: $visitor_email \r\n";
     mail($to,$email_subject,$email_body,$headers);
 
     $to = "$visitor_email";
     $headers = "From: $email_from \r\n";
-    $headers .= "La table N.\n返信はお問い合わせ後、2日以内にさせていただきます。\nレッスンのお申し込みについては、【申込みフォーム】からお願い致します。\n>携帯キャリアメールで受信をご希望の方は、@gmail.comからのメールを受信できるよう設定をお願い致します。 \r\n";
+    $headers .= "Hello $name, I will contact you as fast as possible. Thank you for your an e-mail! \r\n";
     mail($to,$email_subject2,$email_body,$headers);
 
 ?>
