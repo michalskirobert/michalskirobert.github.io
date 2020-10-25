@@ -413,16 +413,11 @@ header {
   height: auto !important;
   flex-basis: calc(50% / 3);
   margin: 0 15px 30px 15px;
-  cursor: pointer;
-  transition: opacity 0.4s ease-in;
   padding: 0;
   outline: none;
   border: none;
 }
 
-.image__item > img:hover {
-  opacity: 0.4;
-}
 
 .image__item {
   display: flex;
