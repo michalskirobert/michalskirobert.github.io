@@ -443,7 +443,6 @@ header {
 .skill > p i {
   font-size: 1.5em;
   margin-right: 6px;
-  cursor: pointer;
   transition: color 0.5s ease;
 }
 
