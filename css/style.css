@@ -32,7 +32,8 @@
   --clr-light: #fff;
   --clr-dark: #303030;
   --clr-accent: #16e0bd;
-  --clr--hover: #7145b9;
+  --clr--link: #790000;;
+  --crl--hover: #990202;;
 
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
@@ -45,7 +46,7 @@
 }
 
 a {
-  color: var(--clr-light);
+  color: var(--clr-link);
   transition: color 0.7s ease-in;
   font-family: var(--ff-secondary);
   font-weight: bold;
