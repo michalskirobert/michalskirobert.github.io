@@ -52,7 +52,7 @@ a {
   font-weight: bold;
 }
 a:hover {
-  color: var(--clr-hover);
+  color: var(--clr--hover);
 }
 
 @media (min-width: 800px) {
