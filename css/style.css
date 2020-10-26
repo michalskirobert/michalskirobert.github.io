@@ -842,9 +842,8 @@ form textarea:valid form textarea:optional::-webkit-input-placeholder,
   visibility: visible !important;
   opacity: 1;
 }
-form textarea,
-#contact form textarea {
-  width: 100%;
+form textarea {
+  width: calc(100% - 50px);
 }
 form input[type="email"],
 #contact form input[type="email"] {
