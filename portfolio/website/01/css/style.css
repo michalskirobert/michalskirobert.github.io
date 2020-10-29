@@ -1,5 +1,7 @@
 /*made by Robert Michalski*/
 
+/*My first mobile first website in Flex-box*/
+
 @import "reset.css";
 
 /* carter-one-regular - latin */
@@ -98,6 +100,17 @@
 header {
   width: 100vw;
   position: fixed;
+  background-image: none;
+  background-size: 80% 70%;
+  background-color: rgba(0, 0, 0, .5);
+  max-height: 12vh;
+  box-shadow: none;
+  padding-bottom: 15px;
+  z-index: 255;
+  transition: background-size 1.5s ease;
+}
+
+header.active {
   background-image: linear-gradient(
     to right top,
     #8343ea,
@@ -113,10 +126,8 @@ header {
     #4ac5f9,
     #00d3fd
   );
-  max-height: 12vh;
+  background-size: 100% 100%;
   box-shadow: 0 0 5px #111;
-  padding-bottom: 15px;
-  z-index: 255;
 }
 
 @media screen and (min-width: 768px) {
@@ -129,10 +140,6 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-main {
-  padding-top: 5vh;
 }
 
 h1,
@@ -470,7 +477,6 @@ footer {
 .nav-list.footer {
   display: flex;
   flex-direction: column;
-  padding: 0 20px 0;
   flex-basis: 50%;
 }
 
@@ -572,4 +578,8 @@ input {
     top: 93%;
     padding: 0;
   }
+}
+
+.nav__item ul:first-child {
+  padding: 0 20px 0 10px;
 }
