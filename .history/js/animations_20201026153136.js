@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(event){
     // array with texts to type in typewriter
-    var dataText = [ "git push 'dev_rob'", "git commit -m 'お疲れ'", "dev--robert", "--ポーランド男児"];
+    var dataText = [ "git push 'dev_rob'", "git commit -m 'お疲れ'", "dev--robert"];
 
     // type one text in the typwriter
     // keeps calling itself until the text is finished
