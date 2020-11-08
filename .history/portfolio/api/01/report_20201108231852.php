@@ -28,7 +28,7 @@ echo"  <meta http-equiv=\"refresh\" content=\"5;url=".$_SERVER['HTTP_REFERER']."
        function state() {
            var stateSent = document.getElementById("state");
            stateSent.innerHTML = `Your report has been sent. <br>
-           Thank you for helping us to imporve our website <br>
+           Thank you to help us to imporve our website <br>
            You will back to previous page within few seconds`;
 }
 </script>

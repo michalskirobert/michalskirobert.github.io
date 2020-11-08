@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">';
 echo"  <meta http-equiv=\"refresh\" content=\"5;url=".$_SERVER['HTTP_REFERER']."\"/>";
  echo' <title>Sending report</title>
-      <link rel="stylesheet" href="https://saro.website/assets/style/css/report.css">
+      <link rel="stylesheet" href="./style/css/report.css">
         <link
       href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900|Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i"
       rel="stylesheet">
@@ -28,7 +28,7 @@ echo"  <meta http-equiv=\"refresh\" content=\"5;url=".$_SERVER['HTTP_REFERER']."
        function state() {
            var stateSent = document.getElementById("state");
            stateSent.innerHTML = `Your report has been sent. <br>
-           Thank you for helping us to imporve our website <br>
+           Thank you to help us to imporve our website <br>
            You will back to previous page within few seconds`;
 }
 </script>
