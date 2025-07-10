@@ -7,6 +7,8 @@ import { FaTerminal } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 
+import batik from "./../../../../public/batik.png";
+
 import Link from "next/link";
 
 const Header = () => {
@@ -50,27 +52,27 @@ const Header = () => {
         </p>
       </div>
       <button
-        aria-label="Hamburger"
-        className={`relative z-20 !text-[var(${
-          open ? "--clr-light" : "--clr-dark"
-        })]`}
+        className="relative z-20 hover:text-[var(--clr-accent)] cursor-pointer"
         onClick={() => setOpen((prev) => !prev)}
       >
         {open ? (
-          <MdClose className="text-4xl" />
+          <MdClose className={"text-4xl text-[var(--clr-light)] shadow"} />
         ) : (
-          <GiHamburgerMenu className="text-3xl" />
+          <GiHamburgerMenu className="text-3xl text-[var(--crl-dark)] shadow" />
         )}
       </button>
       {open && (
-        <nav className="fixed !bg-[var(--clr-dark)] text-[var(--clr-light)] top-0 bottom-0 left-0 right-0 transition-transform z-10">
-          <ul className="list-none flex h-[100%] flex-col justify-evenly items-center m-0 p-0">
+        <nav
+          className={`fixed !bg-[var(--clr-dark)] text-[var(--clr-light)] top-0 bottom-0 left-0 right-0 transition-transform z-10 !bg-[url("/batik.png")]`}
+        >
+          <ul className="list-none flex h-full flex-col justify-evenly items-center m-0 p-0">
             {appLinks.map(({ label, href }) => (
               <li key={href}>
                 <Link
                   {...{
                     href,
-                    className: "!font-[var(--fw-bold)] !text-3xl",
+                    className:
+                      "font-secondary !font-[var(--fw-bold)] !text-5xl hover:text-[var(--clr-accent)] transition-color",
                   }}
                 >
                   {label}
