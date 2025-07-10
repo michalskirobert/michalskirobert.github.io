@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+@layer theme, base, components, utilities;
+
+
+
+
+@layer theme {
+  :root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Fonts */
+  --ff-primary: "Source Sans Pro", sans-serif;
+  --ff-secondary: "Source Code Pro", monospace;
+
+  /* Font weights */
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  /* Colors */
+  --clr-light: #ffffff;
+  --clr-dark: #001D3D;
+  --clr-accent: #FFD60A;
+  --clr-primary: #FFC300;
+  --clr-secondary: #003566;
+
+  /* Font sizes */
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  /* Shadows & other */
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+  --cubic: cubic-bezier(0.64, 0.09, 0.08, 1);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer utilities {
+  .grid-area-img {
+    grid-area: img;
+  }
+  .shadow-bs {
+    box-shadow:
+      0.25em 0.25em 0.75em rgba(0,0,0,0.25),
+      0.125em 0.125em 0.25em rgba(0,0,0,0.15);
+  }
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background: transparent;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+body {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+
+}
+
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: 600;
+}
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: 600;
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+
+b {
+  font-weight: bold;
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.font-secondary {
+  font-family: var(--ff-secondary);
+}

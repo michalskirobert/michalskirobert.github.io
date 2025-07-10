@@ -1,49 +1,8 @@
 @import "reset.css";
 
 /* noto-serif-jp-900 - latin */
-@font-face {
-  display: swap;
-  font-family: "Noto Serif JP";
-  font-style: normal;
-  font-weight: 900;
-  src: local("Noto Serif JP Black"), local("NotoSerifJP-Black"),
-    url("./fonts/noto-serif-jp-v7-latin-900.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("./fonts/noto-serif-jp-v7-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  text-decoration: none;
-  scroll-behavior: smooth;
-}
 
-/* Custom Properties, update these for your own design */
-
-:root {
-  --ff-primary: "Source Sans Pro", sans-serif;
-  --ff-secondary: "Source Code Pro", monospace;
-
-  --fw-reg: 300;
-  --fw-bold: 900;
-
-  --clr-light: #fff;
-  --clr-dark: #303030;
-  --clr-accent: #16e0bd;
-  --clr-link: #790000;
-  --crl-hover: #990202;
-
-  --fs-h1: 3rem;
-  --fs-h2: 2.25rem;
-  --fs-h3: 1.25rem;
-  --fs-body: 1rem;
-
-  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
-    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
-  --cubic: cubic-bezier(0.64, 0.09, 0.08, 1);
-}
 
 a {
   color: var(--clr-link);
@@ -55,30 +14,6 @@ a:hover {
   color: var(--clr-hover);
 }
 
-@media (min-width: 800px) {
-  :root {
-    --fs-h1: 4.5rem;
-    --fs-h2: 3.75rem;
-    --fs-h3: 1.5rem;
-    --fs-body: 1.125rem;
-  }
-}
-
-/* General styles */
-
-/* endable this to add smooth scrolling */
-/* html {
-    scroll-behavior: smooth;
-} */
-
-body {
-  background: var(--clr-light);
-  color: var(--clr-dark);
-  margin: 0;
-  font-family: var(--ff-primary);
-  font-size: var(--fs-body);
-  line-height: 1.6;
-}
 
 section {
   padding: 5em 2em;
@@ -118,37 +53,7 @@ strong {
   transform: scale(1.1);
 }
 
-/* Typography */
 
-h1,
-h2,
-h3 {
-  line-height: 1;
-  margin: 0;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: var(--fs-h1);
-  font-weight: 600;
-}
-h2 {
-  font-size: var(--fs-h2);
-  font-weight: 600;
-}
-h3 {
-  font-size: var(--fs-h3);
-}
-
-p:not(.name) {
-  margin: 1rem 0;
-}
-
-b {
-  font-weight: bold;
-  font-family: var(--ff-primary);
-  font-size: 1rem;
-}
 
 .section__title {
   margin-bottom: 0.25em;
