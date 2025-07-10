@@ -7,8 +7,6 @@ import { FaTerminal } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 
-import batik from "./../../../../public/batik.png";
-
 import Link from "next/link";
 
 const Header = () => {
@@ -52,6 +50,7 @@ const Header = () => {
         </p>
       </div>
       <button
+        aria-label="Toggle navigation"
         className="relative z-20 hover:text-[var(--clr-accent)] cursor-pointer"
         onClick={() => setOpen((prev) => !prev)}
       >
