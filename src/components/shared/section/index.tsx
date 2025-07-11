@@ -20,7 +20,7 @@ export const Section = ({
         className={`
     ${
       styledHeader
-        ? "text-center text-[var(--fs-h2)] relative after:content-[''] after:block after:w-[2em] after:h-[1px] after:mx-auto after:my-[0.5em] after:mb-[1em] after:bg-[var(--clr-accent)] after:opacity-25"
+        ? "relative text-center !text-[var(--fs-h2)] after:content-[''] after:block after:w-[2em] after:h-[1px] after:mx-auto after:my-[0.5em] after:mb-[1em] after:bg-[var(--clr-accent)] after:opacity-25"
         : ""
     }
   ${headerClassName}`}

@@ -42,7 +42,7 @@ const Header = () => {
   }, [index]);
 
   return (
-    <header className="!flex justify-between items-center !p-4 fixed w-full !bg-[var(--clr-light)] h-[35px] shadow">
+    <header className="!flex justify-between items-center !p-4 fixed w-full !bg-[var(--clr-light)] h-[35px] shadow z-10">
       <div className="flex items-center w-[300px]">
         <FaTerminal />
         <p className="text-[1.3rem] font-secondary text-[var(--clr-dark)] font-[var(--fw-bold)] transition-colors overflow-hidden">
@@ -51,21 +51,20 @@ const Header = () => {
       </div>
       <button
         aria-label="Toggle navigation"
-        className="relative z-20 hover:text-[var(--clr-accent)] cursor-pointer"
+        className="relative z-20 hover:text-[var(--clr-accent)] transition hover:scale-110 duration-500 cursor-pointer"
         onClick={() => setOpen((prev) => !prev)}
       >
         {open ? (
-          <MdClose className={"text-4xl text-[var(--clr-light)] shadow"} />
+          <MdClose className={"text-4xl text-[var(--clr-accent)] shadow"} />
         ) : (
           <GiHamburgerMenu className="text-3xl text-[var(--crl-dark)] shadow" />
         )}
       </button>
       <nav
         className={`
-    fixed top-0 bottom-0 left-0 right-0
+    fixed inset-0 !h-[100vh]
     !bg-[var(--clr-dark)] text-[var(--clr-light)]
     !bg-[url("/batik.png")]
-    z-10
     transition-transform duration-500 ease-in-out
     ${open ? "translate-x-0" : "-translate-x-full"}
   `}
@@ -76,8 +75,9 @@ const Header = () => {
               <Link
                 {...{
                   href,
+                  onClick: () => setOpen(false),
                   className:
-                    "font-secondary !font-[var(--fw-bold)] !text-5xl hover:text-[var(--clr-accent)] transition-color shadow",
+                    "font-secondary !font-[var(--fw-bold)] !text-5xl hover:text-[var(--clr-accent)] transition-color duration-500 shadow",
                 }}
               >
                 {label}
