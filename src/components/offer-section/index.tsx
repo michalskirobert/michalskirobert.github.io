@@ -1,15 +1,15 @@
-import { Section } from "@shared/section";
-import Image from "next/image";
+import { CustomPage } from "../shared/page";
 
 import selfie from "@public/robert.jpg";
 
-import styles from "./styles.module.scss";
 import Link from "next/link";
 
 export const OfferSection = () => (
-  <Section className={styles.section}>
-    <h2 className={styles.title}>My offer</h2>
-    <p className={styles.subtitle}>Photography & Software Development</p>
+  <CustomPage
+    title="My offer"
+    subtitle="Photography & Software Development"
+    imageUrl={selfie}
+  >
     <article className="!mb-2 !mt-2">
       <h3 className="!mb-2">For photography:</h3>
       <p>
@@ -56,12 +56,5 @@ export const OfferSection = () => (
       <a href="mailto:rm.software.lab@gmail.com">e-mail</a> or the{" "}
       <Link href="/contact">contact form</Link>
     </article>
-    <Image
-      className={styles.img}
-      src={selfie}
-      alt="Photography"
-      width={0}
-      height={0}
-    />
-  </Section>
+  </CustomPage>
 );
