@@ -24,13 +24,13 @@ export const IntroSection = () => {
         <Image
           className="order-2 lg:order-1 lg:!w-[220px] lg:!h-[100%] sm:!w-full !h-auto object-cover shadow-bs"
           src={selfie}
-          alt="a picture of me with smile :)"
+          alt="NurByte"
           width={0}
           height={0}
         />
       </div>
       <p className="font-secondary bg-[var(--clr-primary)]! !py-3 !px-3 text-right font-[var(--ff-secondary)] !mx-auto !mb-2 !text-xl">
-        software engineer | photographer
+        software engineer
       </p>
       <div className="flex justify-center mt-[10px] gap-1 flex-wrap">
         <CustomButton

@@ -44,8 +44,8 @@ const Header = () => {
   return (
     <header className="!flex justify-between items-center !p-4 fixed w-full !bg-[var(--clr-light)] h-[35px] shadow z-10">
       <div className="flex items-center w-[300px]">
-        <FaTerminal />
-        <p className="text-[1.3rem] font-secondary text-[var(--clr-dark)] font-[var(--fw-bold)] transition-colors overflow-hidden">
+        <FaTerminal className="mr-1" />
+        <p className="!text-[0.9rem] font-secondary text-[var(--clr-dark)] font-[var(--fw-bold)] transition-colors overflow-hidden">
           {terminal}
         </p>
       </div>

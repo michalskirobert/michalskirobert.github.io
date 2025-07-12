@@ -14,6 +14,7 @@ export default function Footer() {
       <div className="!shadow-2xl !font-bold text-[var(--clr-primary)] text-center">
         <p className="!text-sm">© 2025 Robert Michalski.</p>
         <p className="!text-xs">All rights reserved.</p>
+        <p className="!text-xs">NIP: 7511792856</p>
       </div>
     </footer>
   );

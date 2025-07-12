@@ -7,10 +7,10 @@ import Link from "next/link";
 export const OfferSection = () => (
   <CustomPage
     title="My offer"
-    subtitle="Photography & Software Development"
+    subtitle="Software Development"
     imageUrl={selfie}
   >
-    <article className="!mb-2 !mt-2">
+    {/* <article className="!mb-2 !mt-2">
       <h3 className="!mb-2">For photography:</h3>
       <p>
         I&apos;m a Polish photographer who specializes in stock photos, fashion,
@@ -25,9 +25,8 @@ export const OfferSection = () => (
         Pricing is available after a free consultation, so we can discuss your
         vision and prepare a custom offer that suits you best.
       </p>
-    </article>
+    </article> */}
     <article>
-      <h3 className="!mb-2">For software engineering:</h3>
       <p>
         Besides photography, I’m passionate about building modern, user-friendly
         applications. I develop mobile apps using React Native, as well as web
@@ -36,7 +35,7 @@ export const OfferSection = () => (
         MongoDB, and Firebase.
       </p>
       <p>
-        My standard rate is around <strong>150 zł brutto</strong> per hour
+        My standard rate is around <strong>150 PLN brutto</strong> per hour
         (price including 23% VAT). However, it’s always better to discuss the
         details and prepare a project-based estimate, so you know exactly what
         to expect.
