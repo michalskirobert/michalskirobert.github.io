@@ -1,7 +1,7 @@
 import { Section } from "@shared/section";
 import Image from "next/image";
 
-import selfie from "@public/dev-robert.jpg";
+import selfie from "@public/robert.jpg";
 
 import styles from "./styles.module.scss";
 import Link from "next/link";

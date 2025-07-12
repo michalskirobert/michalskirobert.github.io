@@ -2,7 +2,7 @@ import { Section } from "@src/components/shared/section";
 import Image from "next/image";
 import { CustomButton } from "@src/components/shared/custom-button";
 
-import selfie from "@public/dev-robert.jpg";
+import selfie from "@public/robert.jpg";
 
 export const IntroSection = () => {
   return (

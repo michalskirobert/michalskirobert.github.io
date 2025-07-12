@@ -77,7 +77,7 @@ const Header = () => {
                   href,
                   onClick: () => setOpen(false),
                   className:
-                    "font-secondary !font-[var(--fw-bold)] !text-5xl hover:text-[var(--clr-accent)] transition-color duration-500 shadow",
+                    "font-secondary !font-[var(--fw-bold)] !text-5xl hover:text-[var(--clr-accent)] transition-color duration-500 !text-shadow-xs !no-underline",
                 }}
               >
                 {label}
