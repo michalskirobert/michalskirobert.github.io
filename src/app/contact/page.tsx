@@ -1,11 +1,7 @@
 import { CustomPage } from "@shared/page";
 
-import { Input } from "./Input";
-
 import test from "@public/robert.jpg";
-import { Textarea } from "./Textarea";
-import { useForm } from "react-hook-form";
-import { ContactProps } from "./types";
+import { ContactForm } from "@src/components/contact-form";
 
 export const generateMetadata = async () => {
   return {
@@ -15,13 +11,6 @@ export const generateMetadata = async () => {
 };
 
 export default function ContactPage() {
-  const { control, handleSubmit } = useForm<ContactProps>();
-
-  const onSubmit = (data: any) => {
-    try {
-    } catch (error) {}
-  };
-
   return (
     <CustomPage
       title="Contact me"
@@ -30,35 +19,7 @@ export default function ContactPage() {
       fullScreen
       showNav
     >
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col">
-          <div className="flex gap-2">
-            <Input
-              {...{ control, label: "Name *", name: "name", type: "text" }}
-            />
-            <Input
-              {...{ control, label: "Email *", name: "email", type: "email" }}
-            />
-          </div>
-          <div className="flex gap-2">
-            <Input
-              {...{
-                control,
-                label: "Subject *",
-                name: "subject",
-                type: "text",
-              }}
-            />
-          </div>
-          <Textarea
-            {...{
-              control,
-              label: "Content *",
-              name: "message",
-            }}
-          />
-        </div>
-      </form>
+      <ContactForm />
     </CustomPage>
   );
 }

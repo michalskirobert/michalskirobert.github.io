@@ -8,8 +8,14 @@ interface Props extends React.ComponentProps<"button"> {
   isLoading?: boolean;
 }
 
-export const CustomButton = ({ content, className, ...restProps }: Props) => (
+export const CustomButton = ({
+  content,
+  className,
+  icon,
+  ...restProps
+}: Props) => (
   <button {...restProps} className={`${styles.btn} ${className}`}>
+    {icon}
     {content}
   </button>
 );
