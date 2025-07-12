@@ -13,14 +13,14 @@ export const OfferSection = () => (
     <article className="!mb-2 !mt-2">
       <h3 className="!mb-2">For photography:</h3>
       <p>
-        I'm a Polish photographer who specializes in stock photos, fashion,
+        I&apos;m a Polish photographer who specializes in stock photos, fashion,
         clothing, portraits, and family sessions. I often find inspiration
         during my travels, especially in Asia. Every year, I spend time in
         Singapore, Indonesia (Batam), and Malaysia, where I’m sometimes
         personally available for photo sessions and projects.
       </p>
       <p>
-        Whether you're looking for creative fashion shots, professional
+        Whether you&apos;re looking for creative fashion shots, professional
         portraits, or family photos, we can tailor the session to your needs.
         Pricing is available after a free consultation, so we can discuss your
         vision and prepare a custom offer that suits you best.
@@ -48,9 +48,9 @@ export const OfferSection = () => (
       </p>
       <p>
         Combining my technical and creative skills helps me deliver unique and
-        inspiring projects, whether it’s a website, a mobile app, or an API. I
-        love solving problems and continuously improving my skills to provide
-        the best solutions.
+        inspiring projects, whether it&apos;s a website, a mobile app, or an
+        API. I love solving problems and continuously improving my skills to
+        provide the best solutions.
       </p>
       <p className="inline">Feel free to contact me via</p>{" "}
       <a href="mailto:rm.software.lab@gmail.com">e-mail</a> or the{" "}

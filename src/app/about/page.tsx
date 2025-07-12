@@ -1,3 +1,5 @@
+import { Section } from "@src/components/shared/section";
+
 export default function TestPage() {
-  return <div className="lol!">test</div>;
+  return <Section title="test">test</Section>;
 }

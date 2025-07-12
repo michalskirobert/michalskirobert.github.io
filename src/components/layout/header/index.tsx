@@ -17,7 +17,7 @@ const Header = () => {
 
   useEffect(() => {
     let i = 0;
-    let currentText = terminalContent[index];
+    const currentText = terminalContent[index];
     let timeout: NodeJS.Timeout;
 
     const typeWriter = () => {

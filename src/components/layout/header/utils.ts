@@ -1,8 +1,10 @@
-export const appLinks = [
-  { label: "Home", href: "/" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+import { ROUTER_PATHS } from "@src/utils/constants";
+
+export const appLinks: { label: string; href: string }[] = [
+  { label: "Home", href: ROUTER_PATHS.HOME },
+  { label: "Portfolio", href: ROUTER_PATHS.PORTFOLIO },
+  { label: "About", href: ROUTER_PATHS.ABOUT_ME },
+  { label: "Contact", href: ROUTER_PATHS.CONTACT },
 ];
 
 export const terminalContent = [

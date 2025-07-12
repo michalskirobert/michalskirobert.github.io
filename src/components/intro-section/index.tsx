@@ -1,10 +1,18 @@
+"use client";
+
 import { Section } from "@src/components/shared/section";
 import Image from "next/image";
 import { CustomButton } from "@src/components/shared/custom-button";
 
 import selfie from "@public/robert.jpg";
+import { useRouter } from "next/navigation";
+import { ROUTER_PATHS } from "@src/utils/constants";
 
 export const IntroSection = () => {
+  const router = useRouter();
+
+  const navigate = (dest: string) => router.push(dest, { scroll: true });
+
   return (
     <Section
       className={"flex flex-col !mx-auto !my-4 flex-wrap max-w-[500px] !p-2"}
@@ -28,16 +36,19 @@ export const IntroSection = () => {
         <CustomButton
           {...{
             content: "About me",
+            onClick: () => navigate(ROUTER_PATHS.ABOUT_ME),
           }}
         />
         <CustomButton
           {...{
             content: "Portfolio",
+            onClick: () => navigate(ROUTER_PATHS.PORTFOLIO),
           }}
         />
         <CustomButton
           {...{
             content: "Contact",
+            onClick: () => navigate(ROUTER_PATHS.CONTACT),
           }}
         />
       </div>
