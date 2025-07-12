@@ -256,3 +256,17 @@ img {
 .font-secondary {
   font-family: var(--ff-secondary);
 }
+
+a {
+  color: var(--clr-accent);
+  font-size: var(--fs-body);
+  display: inline-block;
+  text-decoration: underline;
+  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+a:hover {
+ transform: scale(1.1)!important;
+ color: var(--clr-primary);
+ text-decoration: none;
+}
