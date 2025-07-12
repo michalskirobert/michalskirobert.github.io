@@ -4,6 +4,8 @@ import { Input } from "./Input";
 
 import test from "@public/robert.jpg";
 import { Textarea } from "./Textarea";
+import { useForm } from "react-hook-form";
+import { ContactProps } from "./types";
 
 export const generateMetadata = async () => {
   return {
@@ -13,6 +15,8 @@ export const generateMetadata = async () => {
 };
 
 export default function ContactPage() {
+  const { control, handleSubmit } = useForm<ContactProps>();
+
   const onSubmit = (data: any) => {
     try {
     } catch (error) {}
@@ -26,27 +30,20 @@ export default function ContactPage() {
       fullScreen
       showNav
     >
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col">
           <div className="flex gap-2">
             <Input
-              {...{
-                label: "Name *",
-                name: "name",
-                type: "text",
-              }}
+              {...{ control, label: "Name *", name: "name", type: "text" }}
             />
             <Input
-              {...{
-                label: "Email *",
-                name: "email",
-                type: "email",
-              }}
+              {...{ control, label: "Email *", name: "email", type: "email" }}
             />
           </div>
           <div className="flex gap-2">
             <Input
               {...{
+                control,
                 label: "Subject *",
                 name: "subject",
                 type: "text",
@@ -55,6 +52,7 @@ export default function ContactPage() {
           </div>
           <Textarea
             {...{
+              control,
               label: "Content *",
               name: "message",
             }}
