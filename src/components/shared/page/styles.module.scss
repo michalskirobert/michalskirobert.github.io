@@ -1,7 +1,8 @@
 .section {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 5em 2em;
+  padding: 1em 2em;
+  position: relative;
 
   @media (min-width: 600px) {
     display: grid;
@@ -29,8 +30,6 @@
   font-family: var(--ff-secondary);
   margin-bottom: 1em;
   opacity: 1;
-  transform: translate(0px, 0px);
-
   margin: 0;
   font-size: var(--fs-h3);
 

@@ -29,6 +29,7 @@ const sourceCodePro = Source_Code_Pro({
   variable: "--font-secondary",
   subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
   title: "NurByte",
   description: "Robert Michalski - NurByte",
