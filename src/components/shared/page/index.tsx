@@ -11,9 +11,9 @@ import { useRouter } from "next/navigation";
 interface Props {
   title: string;
   children: ReactNode;
+  imageUrl?: StaticImageData | string;
   showNav?: boolean;
   subtitle?: string;
-  imageUrl?: StaticImageData | string;
   fullScreen?: boolean;
 }
 
@@ -30,7 +30,7 @@ export const CustomPage = ({
   return (
     <div
       className={`relative ${
-        fullScreen ? "min-h-[calc(100vh-25px)]" : "h-[100%]"
+        fullScreen ? "min-h-[calc(100vh-25px)]" : "h-full"
       }`}
     >
       {showNav && (
@@ -45,15 +45,13 @@ export const CustomPage = ({
         <h2 className={styles.title}>{title}</h2>
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         {children}
-        {imageUrl && (
-          <Image
-            className={styles.img}
-            src={imageUrl}
-            alt="Photography"
-            width={0}
-            height={0}
-          />
-        )}
+        <Image
+          className={styles.img}
+          src={imageUrl || ""}
+          alt="Photography"
+          width={0}
+          height={0}
+        />
       </section>
     </div>
   );

@@ -2,7 +2,7 @@ import { CustomPage } from "@shared/page";
 
 export const generateMetadata = async () => {
   return {
-    title: "Portfolio",
+    title: "NurByte | My portfolio",
     description: "",
   };
 };
@@ -10,7 +10,7 @@ export const generateMetadata = async () => {
 export default function portfolioPage() {
   return (
     <CustomPage title="test" fullScreen showNav>
-      test
+      testqwewqeweqewqewwqewqe
     </CustomPage>
   );
 }

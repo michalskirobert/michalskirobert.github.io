@@ -1,15 +1,11 @@
 import { CustomPage } from "../shared/page";
 
-import selfie from "@public/robert.jpg";
+import offer from "@public/offer.jpg";
 
 import Link from "next/link";
 
 export const OfferSection = () => (
-  <CustomPage
-    title="My offer"
-    subtitle="Software Development"
-    imageUrl={selfie}
-  >
+  <CustomPage title="My offer" subtitle="Software Development" imageUrl={offer}>
     {/* <article className="!mb-2 !mt-2">
       <h3 className="!mb-2">For photography:</h3>
       <p>
