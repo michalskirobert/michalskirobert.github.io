@@ -12,7 +12,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "./validation-schema";
 import axios from "axios";
 
-export const ContactForm = () => {
+const ContactForm = () => {
   const [notif, setNotif] = useState("");
 
   const { control, handleSubmit } = useForm<ContactProps>({
@@ -63,3 +63,5 @@ export const ContactForm = () => {
     </form>
   );
 };
+
+export default ContactForm;
