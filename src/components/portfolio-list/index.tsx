@@ -1,16 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { portfolioList } from "./utils";
 import Image from "next/image";
+
+import { portfolioList } from "./utils";
 import { FaGithub } from "react-icons/fa";
 import { MdPreview } from "react-icons/md";
 
-export const PortfolioList = () => {
+const PortfolioList = () => {
   return (
     <div className="flex flex-wrap gap-3 mt-5">
       {portfolioList.map(({ technologies, title, src, url, repoUrl }) => (
-        <div className="flex flex-col w-full md:w-[200px] h-auto shadow-lg gap-2">
+        <div
+          key={title}
+          className="flex flex-col w-full md:w-[200px] h-auto shadow-lg gap-2"
+        >
           <Image
             {...{
               src,
@@ -55,3 +59,5 @@ export const PortfolioList = () => {
     </div>
   );
 };
+
+export default PortfolioList;

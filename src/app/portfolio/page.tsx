@@ -1,7 +1,7 @@
 import { CustomPage } from "@shared/page";
-import { PortfolioList } from "@src/components/portfolio-list";
 
 import logo from "@public/logo.png";
+import PortfolioList from "@components/portfolio-list/wrapper";
 
 export const generateMetadata = async () => {
   return {
@@ -10,7 +10,7 @@ export const generateMetadata = async () => {
   };
 };
 
-export default function portfolioPage() {
+export default async function portfolioPage() {
   return (
     <CustomPage
       title="Portfolio"
