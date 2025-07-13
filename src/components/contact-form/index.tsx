@@ -16,6 +16,7 @@ export const ContactForm = () => {
   const [notif, setNotif] = useState("");
 
   const { control, handleSubmit } = useForm<ContactProps>({
+    mode: "onSubmit",
     defaultValues: { email: "", message: "", name: "", subject: "" },
     resolver: yupResolver(validationSchema),
   });

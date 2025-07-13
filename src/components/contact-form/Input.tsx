@@ -15,7 +15,7 @@ export const Input = ({ control, name, label, type }: Props) => {
   } = useController({ name, control });
 
   const checkValidation = (): React.ComponentProps<"input">["className"] =>
-    invalid ? "border-red-300" : "border-gray-300";
+    invalid ? "!border-red-300 border-2" : "border-gray-300";
 
   return (
     <div className="w-full">
