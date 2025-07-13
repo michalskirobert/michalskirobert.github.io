@@ -6,9 +6,10 @@ interface Props {
   name: keyof ContactProps;
   label: string;
   type: React.ComponentProps<"input">["type"];
+  disabled: boolean;
 }
 
-export const Input = ({ control, name, label, type }: Props) => {
+export const Input = ({ control, name, label, type, disabled }: Props) => {
   const {
     field,
     fieldState: { invalid, error },
@@ -28,6 +29,7 @@ export const Input = ({ control, name, label, type }: Props) => {
           type={type}
           id={name}
           className={`${checkValidation()} mt-0.5 w-full p-2 rounded  shadow-sm sm:text-sm focus-visible:outline-[var(--clr-accent)] transition-colors duration-300`}
+          disabled={disabled}
         />
         {invalid && (
           <span className="text-xs text-red-400">{error?.message}</span>

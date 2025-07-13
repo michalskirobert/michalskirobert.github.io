@@ -13,6 +13,7 @@ import { validationSchema } from "./validation-schema";
 import axios from "axios";
 
 const ContactForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [notif, setNotif] = useState("");
 
   const { control, handleSubmit } = useForm<ContactProps>({
@@ -22,11 +23,14 @@ const ContactForm = () => {
   });
 
   const onSubmit = async (data: ContactProps) => {
+    setIsLoading(true);
     try {
       const response = await axios.post<string>("api/send", data);
       setNotif(response.data);
     } catch (error) {
       setNotif("");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -35,10 +39,22 @@ const ContactForm = () => {
       <div className="flex flex-col">
         <div className="flex gap-2">
           <Input
-            {...{ control, label: "Name *", name: "name", type: "text" }}
+            {...{
+              control,
+              label: "Name *",
+              name: "name",
+              type: "text",
+              disabled: isLoading,
+            }}
           />
           <Input
-            {...{ control, label: "Email *", name: "email", type: "email" }}
+            {...{
+              control,
+              label: "Email *",
+              name: "email",
+              type: "email",
+              disabled: isLoading,
+            }}
           />
         </div>
         <div className="flex gap-2">
@@ -48,6 +64,7 @@ const ContactForm = () => {
               label: "Subject *",
               name: "subject",
               type: "text",
+              disabled: isLoading,
             }}
           />
         </div>
@@ -56,10 +73,11 @@ const ContactForm = () => {
             control,
             label: "Content *",
             name: "message",
+            disabled: isLoading,
           }}
         />
       </div>
-      <CustomButton {...{ content: "Send", icon: <FaPlane /> }} />
+      <CustomButton {...{ content: "Send", icon: <FaPlane />, isLoading }} />
     </form>
   );
 };
