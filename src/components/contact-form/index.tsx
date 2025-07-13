@@ -14,7 +14,6 @@ import axios from "axios";
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [notif, setNotif] = useState("");
 
   const { control, handleSubmit } = useForm<ContactProps>({
     mode: "onSubmit",
@@ -25,10 +24,9 @@ const ContactForm = () => {
   const onSubmit = async (data: ContactProps) => {
     setIsLoading(true);
     try {
-      const response = await axios.post<string>("api/send", data);
-      setNotif(response.data);
-    } catch (error) {
-      setNotif("");
+      await axios.post<string>("api/send", data);
+    } catch (err) {
+      console.error("Error sending message:", err);
     } finally {
       setIsLoading(false);
     }

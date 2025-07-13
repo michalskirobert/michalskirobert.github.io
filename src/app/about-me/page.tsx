@@ -21,8 +21,8 @@ export default function AboutPage() {
       <article className="!flex flex-col gap-3">
         <p>
           My name is <strong>Robert Michalski</strong>, and my Arabic name is{" "}
-          <strong>Isham Zayd</strong>. I was born in 1994 and I'm married to an
-          Indonesian woman.
+          <strong>Isham Zayd</strong>. I was born in 1994 and I&apos;m married
+          to an Indonesian woman.
         </p>
         <p>
           I have around{" "}
@@ -36,9 +36,9 @@ export default function AboutPage() {
         <p>
           On the backend, I work primarily with <strong>Node.js</strong> and
           TypeScript, and I personally prefer using <strong>Express.js</strong>{" "}
-          as my framework of choice. I don’t like writing code in classes; for
-          me, functional approaches are much more clean, readable, and elegant.
-          I always focus on{" "}
+          as my framework of choice. I don&apos;t like writing code in classes;
+          for me, functional approaches are much more clean, readable, and
+          elegant. I always focus on{" "}
           <strong>
             optimization, code readability, and high-quality standards.
           </strong>
@@ -48,7 +48,7 @@ export default function AboutPage() {
           <strong>MongoDB</strong> and <strong>PostgreSQL</strong>.
         </p>
         <p>
-          I’m deeply passionate about Asia and Asian cuisine. My favorite
+          I&apos;m deeply passionate about Asia and Asian cuisine. My favorite
           breakfast is <strong>Teh Tarik panas</strong> with{" "}
           <strong>Nasi Lemak</strong> or <strong>Nasi Kuning</strong>, and for
           lunch, I love <strong>Teh Tarik dingin</strong> with{" "}
