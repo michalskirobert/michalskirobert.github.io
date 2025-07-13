@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- External fonts may not load in all email clients -->
     <title>NurByte</title>
   </head>
 
@@ -30,68 +29,49 @@
           0 2px 4px -2px rgba(0, 0, 0, 0.1);
       "
     >
-      <div style="display: flex; justify-content: center; margin-bottom: 24px">
+      <div style="text-align: center; margin-bottom: 24px">
         <a
           href="https://michalskirobert.github.io"
           style="color: #333e48; text-decoration: underline"
         >
           <img
-            src="../../../../public/logo.png"
+            src="https://michalskirobert.github.io/logo.png"
             alt="Robert Michalski - NurByte"
-            style="
-              height: 100%;
-              width: 100px;
-              object-fit: contain;
-              display: block;
-            "
+            style="width: 100px; display: block; margin: 0 auto"
           />
         </a>
       </div>
 
-      <h1
-        style="
-          color: #003566;
-          text-align: center;
-          font-size: 28px;
-          font-family: 'Open Sans', sans-serif;
-        "
-      >
-        Recieved email from <strong style="color: #ffc300">#name</strong>
+      <h1 style="color: #003566; text-align: center; font-size: 28px">
+        Received email from <strong style="color: #ffc300">#name</strong>
       </h1>
+
       <h2
         style="
           color: #003566;
           margin-bottom: 8px;
           font-size: 16px;
           font-weight: 600;
-          font-family: 'Open Sans', sans-serif;
         "
       >
         Email:
-        <a style="color: #ffc300" href="mailto:#email"
+        <a style="color: #ffc300; text-decoration: none" href="mailto:#email"
           ><strong>#email</strong></a
         >
       </h2>
+
       <h2
         style="
           color: #003566;
           margin-bottom: 8px;
           font-size: 16px;
           font-weight: 600;
-          font-family: 'Open Sans', sans-serif;
         "
       >
         Subject: <strong>#subject</strong>
       </h2>
-      <p
-        style="
-          font-size: 0.9rem;
-          margin: 0;
-          padding: 0;
-          font-family: 'Open Sans', sans-serif;
-          color: #003566;
-        "
-      >
+
+      <p style="font-size: 0.9rem; margin: 0; padding: 0; color: #003566">
         #message
       </p>
     </div>
