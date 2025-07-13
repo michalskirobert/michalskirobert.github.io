@@ -1,37 +1,15 @@
 import { ContactProps } from "@src/components/contact-form/types";
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 import nodemailer from "nodemailer";
-
-function renderTemplate(template: string, data: Record<string, string>) {
-  let output = template;
-  for (const [key, value] of Object.entries(data)) {
-    output = output.replaceAll(`#${key}`, value);
-  }
-  return output;
-}
+import { readHtmlTemplate, renderTemplate } from "./helpers";
 
 export const POST = async (req: NextRequest) => {
   try {
     const { email, message, name, subject } =
       (await req.json()) as ContactProps;
 
-    const customerTemplatePath = path.join(
-      process.cwd(),
-      "src",
-      "templates",
-      "template_customer.html"
-    );
-    const receiverTemplatePath = path.join(
-      process.cwd(),
-      "src",
-      "templates",
-      "template_receiver.html"
-    );
-
-    const customerTemplate = fs.readFileSync(customerTemplatePath, "utf-8");
-    const receiverTemplate = fs.readFileSync(receiverTemplatePath, "utf-8");
+    const customerTemplate = readHtmlTemplate("template_customer");
+    const receiverTemplate = readHtmlTemplate("template_receiver");
 
     const templateData = {
       name,
