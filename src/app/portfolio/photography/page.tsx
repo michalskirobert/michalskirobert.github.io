@@ -3,6 +3,8 @@ import { CustomPage } from "@src/components/shared/page";
 
 import { portfolioList } from "./utils";
 
+import photographyImage from "@public/photography_offer_grid.jpg";
+
 export const generateMetadata = async () => {
   return {
     title: "NurByte | My portfolio - Photography",
@@ -12,7 +14,13 @@ export const generateMetadata = async () => {
 
 export default function photographyPortfolioPage() {
   return (
-    <CustomPage title="Portfolio" subtitle="list" fullScreen showNav>
+    <CustomPage
+      title="Portfolio"
+      subtitle="list"
+      imageUrl={photographyImage}
+      fullScreen
+      showNav
+    >
       <PortfolioList {...{ portfolioList }} />
     </CustomPage>
   );

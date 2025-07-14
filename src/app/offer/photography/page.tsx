@@ -2,11 +2,14 @@ import { CustomPage } from "@src/components/shared/page";
 import { ROUTER_PATHS } from "@src/utils/constants";
 import Link from "next/link";
 
+import photographyImage from "@public/photography_offer_grid.jpg";
+
 export default function PhotographyOffer() {
   return (
     <CustomPage
       title="Photography Offer"
       subtitle="Robert Michalski - NurByte"
+      imageUrl={photographyImage}
       fullScreen
       showNav
     >

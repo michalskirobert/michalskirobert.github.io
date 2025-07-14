@@ -1,6 +1,6 @@
 import { CustomPage } from "@shared/page";
 
-import test from "@public/robert.jpg";
+import me from "@public/robert.jpg";
 
 export const generateMetadata = async () => {
   return {
@@ -14,7 +14,7 @@ export default function AboutPage() {
     <CustomPage
       title="About me"
       subtitle="Robert Michalski - NurByte"
-      imageUrl={test}
+      imageUrl={me}
       fullScreen
       showNav
     >

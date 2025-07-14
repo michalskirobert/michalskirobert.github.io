@@ -2,6 +2,8 @@ import PortfolioList from "@src/components/portfolio-list";
 import { CustomPage } from "@src/components/shared/page";
 import { portfolioList } from "./utils";
 
+import softwareImage from "@public/software_offer_grid.jpg";
+
 export const generateMetadata = async () => {
   return {
     title: "NurByte | My portfolio - Software",
@@ -11,7 +13,13 @@ export const generateMetadata = async () => {
 
 export default function PortfolioSoftwarePage() {
   return (
-    <CustomPage title="Portfolio" subtitle="list" fullScreen showNav>
+    <CustomPage
+      title="Portfolio"
+      subtitle="list"
+      imageUrl={softwareImage}
+      fullScreen
+      showNav
+    >
       <PortfolioList {...{ portfolioList }} />
     </CustomPage>
   );

@@ -3,11 +3,14 @@ import { ROUTER_PATHS } from "@src/utils/constants";
 import Link from "next/link";
 import React from "react";
 
+import softwareImage from "@public/software_offer_grid.jpg";
+
 export default function SoftwareOffer() {
   return (
     <CustomPage
       title="Offer"
       subtitle="Robert Michalski - NurByte"
+      imageUrl={softwareImage}
       fullScreen
       showNav
     >
