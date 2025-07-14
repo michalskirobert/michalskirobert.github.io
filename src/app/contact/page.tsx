@@ -1,6 +1,6 @@
 import { CustomPage } from "@shared/page";
 
-import test from "@public/robert.jpg";
+import contactImg from "@public/contact_img.jpg";
 import ContactForm from "@src/components/contact-form/wrapper";
 
 export const generateMetadata = async () => {
@@ -15,7 +15,7 @@ export default function ContactPage() {
     <CustomPage
       title="Contact me"
       subtitle="Let’s work together!"
-      imageUrl={test}
+      imageUrl={contactImg}
       fullScreen
       showNav
     >

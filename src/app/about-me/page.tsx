@@ -1,6 +1,6 @@
 import { CustomPage } from "@shared/page";
 
-import me from "@public/robert.jpg";
+import me from "@public/me_bali.jpg";
 
 export const generateMetadata = async () => {
   return {
