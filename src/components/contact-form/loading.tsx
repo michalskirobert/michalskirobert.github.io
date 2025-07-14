@@ -1,4 +1,4 @@
-export const ContactFormSkeleton = () => {
+export const Skeleton = () => {
   return (
     <form className="mt-2">
       <div className="flex flex-col animate-pulse">

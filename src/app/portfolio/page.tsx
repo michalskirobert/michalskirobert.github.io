@@ -1,7 +1,4 @@
-import { CustomPage } from "@shared/page";
-
-import logo from "@public/logo.png";
-import PortfolioList from "@components/portfolio-list/wrapper";
+import CategoryPicker from "@src/components/category-picker";
 
 export const generateMetadata = async () => {
   return {
@@ -11,15 +8,5 @@ export const generateMetadata = async () => {
 };
 
 export default async function portfolioPage() {
-  return (
-    <CustomPage
-      title="Portfolio"
-      subtitle="list"
-      imageUrl={logo}
-      fullScreen
-      showNav
-    >
-      <PortfolioList />
-    </CustomPage>
-  );
+  return <CategoryPicker type="portfolio" />;
 }

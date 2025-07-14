@@ -2,11 +2,12 @@
 
 import { ReactNode } from "react";
 
+import { useBack } from "@hooks/use-back";
+
 import { FaArrowLeft } from "react-icons/fa";
 
 import styles from "./styles.module.scss";
 import Image, { StaticImageData } from "next/image";
-import { useRouter } from "next/navigation";
 
 interface Props {
   title: string;
@@ -25,7 +26,7 @@ export const CustomPage = ({
   showNav = false,
   fullScreen = false,
 }: Props) => {
-  const router = useRouter();
+  const { handleBack } = useBack();
 
   return (
     <div
@@ -36,7 +37,7 @@ export const CustomPage = ({
       {showNav && (
         <button
           className="flex items-center gap-2 mt-[25px] ml-5 cursor-pointer hover:scale-110 transition-transform duration-550"
-          onClick={() => router.push("/")}
+          onClick={handleBack}
         >
           <FaArrowLeft /> Back
         </button>

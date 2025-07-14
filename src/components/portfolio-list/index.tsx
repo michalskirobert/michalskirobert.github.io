@@ -3,11 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { portfolioList } from "./utils";
+import { PortfolioItem } from "./utils";
 import { FaGithub } from "react-icons/fa";
 import { MdPreview } from "react-icons/md";
 
-const PortfolioList = () => {
+interface Props {
+  portfolioList: PortfolioItem[];
+}
+
+const PortfolioList = ({ portfolioList }: Props) => {
   return (
     <div className="flex flex-wrap gap-3 mt-5">
       {portfolioList.map(({ technologies, title, src, url, repoUrl }) => (
