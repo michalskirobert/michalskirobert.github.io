@@ -31,10 +31,10 @@ export const SkillsSection = () => {
               tomic
               <span className="!font-bold">D</span>esign.
             </p>
-            <p>
+            {/* <p>
               <strong className="!font-bold">Photography</strong>: Supporting
               design with thoughtful, consistent visual storytelling.
-            </p>
+            </p> */}
           </div>
         </Skill>
       </div>

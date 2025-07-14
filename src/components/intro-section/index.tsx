@@ -44,6 +44,12 @@ export const IntroSection = () => {
             content: "Portfolio",
             onClick: () => navigate(ROUTER_PATHS.PORTFOLIO),
           }}
+        />{" "}
+        <CustomButton
+          {...{
+            content: "Offer",
+            onClick: () => navigate(ROUTER_PATHS.OFFER),
+          }}
         />
         <CustomButton
           {...{
