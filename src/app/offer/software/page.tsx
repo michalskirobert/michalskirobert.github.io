@@ -16,9 +16,9 @@ export default function SoftwareOffer() {
     >
       <article className="!flex flex-col gap-4">
         <p>
-          Welcome to my offer page! I'm a passionate software engineer dedicated
-          to building high-quality, scalable, and efficient applications
-          tailored to your needs.
+          Welcome to my offer page! I&apos;m a passionate software engineer
+          dedicated to building high-quality, scalable, and efficient
+          applications tailored to your needs.
         </p>
         <p>
           I provide a wide range of services in both web and mobile development,
@@ -44,9 +44,9 @@ export default function SoftwareOffer() {
           of my recent projects.
         </p>
         <p>
-          Occasionally, I'm also available in Singapore, Malaysia, and Indonesia
-          (Batam), where I spend a few months each year. Feel free to reach out
-          if you're in the region!
+          Occasionally, I&apos;m also available in Singapore, Malaysia, and
+          Indonesia (Batam), where I spend a few months each year. Feel free to
+          reach out if you&apos;re in the region!
         </p>
       </article>
     </CustomPage>

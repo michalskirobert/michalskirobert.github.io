@@ -15,12 +15,13 @@ export default function PhotographyOffer() {
     >
       <article className="!flex flex-col gap-4">
         <p>
-          Welcome to my photography offer page! I'm a passionate photographer
-          dedicated to capturing the beauty of the world through my lens.
+          Welcome to my photography offer page! I&apos;m a passionate
+          photographer dedicated to capturing the beauty of the world through my
+          lens.
         </p>
         <p>
           I provide a wide range of photography services, tailored to fit
-          different needs and budgets. Here’s a breakdown of my typical
+          different needs and budgets. Here&rsquo;s a breakdown of my typical
           offerings and prices (all prices are brutto, including VAT):
         </p>
         <ul className="list-disc pl-5">
@@ -66,7 +67,7 @@ export default function PhotographyOffer() {
           <a href="/contact" className="text-blue-600 underline">
             contact page
           </a>
-          . I'm happy to discuss the best solution for your project!
+          . I&apos;m happy to discuss the best solution for your project!
         </p>
         <p>
           Curious about my past work? Check out my{" "}
@@ -74,9 +75,9 @@ export default function PhotographyOffer() {
           some of my recent projects.
         </p>
         <p>
-          Occasionally, I'm also available in Singapore, Malaysia, and Indonesia
-          (Batam), where I spend a few months each year. Feel free to reach out
-          if you're in the region!
+          Occasionally, I&apos;m also available in Singapore, Malaysia, and
+          Indonesia (Batam), where I spend a few months each year. Feel free to
+          reach out if you&apos;re in the region!
         </p>
       </article>
     </CustomPage>
