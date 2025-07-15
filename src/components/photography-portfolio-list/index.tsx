@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FILTER, FilterType, PhotographyPortfolioItem } from "./utils";
 import { CustomImage } from "@shared/image";
-import { Modal } from "./Modal";
+import { Modal } from "./image-modal";
 
 interface Props {
   portfolioList: PhotographyPortfolioItem[];
@@ -11,7 +11,7 @@ interface Props {
 
 const PortfolioList = ({ portfolioList }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [img, setImg] = useState<PhotographyPortfolioItem | null>(null);
+  const [img, setImg] = useState<number | null>(null);
 
   const toggle = () => {
     if (img) {
@@ -49,7 +49,7 @@ const PortfolioList = ({ portfolioList }: Props) => {
           className="relative flex flex-col w-full md:w-[200px] h-auto shadow-lg gap-2  hover:scale-110 transition-transform duration-550 cursor-pointer"
           onClick={() => {
             toggle();
-            setImg({ title, src, category });
+            setImg(i);
           }}
         >
           <CustomImage
@@ -69,7 +69,7 @@ const PortfolioList = ({ portfolioList }: Props) => {
           </div>
         </div>
       ))}
-      {img && <Modal {...{ ...img, category, isOpen, toggle }} />}
+      <Modal {...{ img, filteredList, isOpen, toggle, setImg }} />
     </div>
   );
 };
