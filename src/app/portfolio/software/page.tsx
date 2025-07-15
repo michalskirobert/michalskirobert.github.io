@@ -1,4 +1,4 @@
-import PortfolioList from "@src/components/portfolio-list";
+import PortfolioList from "@src/components/software-portfolio-list";
 import { CustomPage } from "@src/components/shared/page";
 import { portfolioList } from "./utils";
 

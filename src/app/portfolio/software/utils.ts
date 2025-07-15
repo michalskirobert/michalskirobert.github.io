@@ -1,9 +1,8 @@
-import { PortfolioItem } from "@src/components/portfolio-list/utils";
-
 import mainPage from "@public/portoflio/software/main-page.jpg";
 import indpol from "@public/portoflio/software/indpol.jpg";
+import { SoftwarePortfolioItem } from "@src/components/software-portfolio-list/utils";
 
-export const portfolioList: PortfolioItem[] = [
+export const portfolioList: SoftwarePortfolioItem[] = [
   {
     src: mainPage,
     technologies: [

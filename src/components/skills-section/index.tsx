@@ -11,7 +11,7 @@ export const SkillsSection = () => {
   return (
     <Section
       title="Skills"
-      className="!bg-blend-multiply !bg-[rgb(0,0,0,0.5)] text-[var(--clr-accent)] !bg-[url(/skills.jpg)] text-center !pb-10 !bg-center"
+      className="!bg-blend-multiply !bg-[rgb(0,0,0,0.5)] text-[var(--clr-accent)] !bg-[url(/assets/skills.jpg)] text-center !pb-10 !bg-center"
     >
       <div className="flex flex-wrap justify-center items-start !gap-5 !mt-5 !mb-[4em] !px-2">
         <Skill title="Technologies">{renderIcons(technologiesIcons)}</Skill>

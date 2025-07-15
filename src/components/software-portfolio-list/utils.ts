@@ -1,10 +1,9 @@
 import { StaticImageData } from "next/image";
 
-export type PortfolioItem = {
+export type SoftwarePortfolioItem = {
   title: string;
   src: StaticImageData;
-  zoom?: boolean;
-  technologies?: string[];
+  technologies: string[];
   previewUrl?: string;
   repoUrl?: string;
 };

@@ -10,10 +10,10 @@ export const PortfolioListSkeleton = () => {
           <div className="px-2 pb-2">
             <h2 className="w-[150px] h-[12px] bg-gray-200"></h2>
             <p className="text-sm font-[500] w-[150px] h-[12px] bg-gray-200 mt-1"></p>
-            {/* <div className="flex justify-between mt-3">
+            <div className="flex justify-between mt-3">
               <div className="size-6 rounded-full bg-gray-200"></div>
               <div className="size-6 rounded-full bg-gray-200"></div>
-            </div> */}
+            </div>
           </div>
         </div>
       ))}

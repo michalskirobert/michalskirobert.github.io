@@ -1,4 +1,4 @@
-import PortfolioList from "@src/components/portfolio-list/wrapper";
+import Portfolio from "@src/components/photography-portfolio-list/wrapper";
 import { CustomPage } from "@src/components/shared/page";
 
 import { portfolioList } from "./utils";
@@ -21,7 +21,7 @@ export default function photographyPortfolioPage() {
       fullScreen
       showNav
     >
-      <PortfolioList {...{ portfolioList }} />
+      <Portfolio {...{ portfolioList }} />
     </CustomPage>
   );
 }
