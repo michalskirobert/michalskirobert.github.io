@@ -146,3 +146,22 @@ a:hover {
  color: var(--clr-primary);
  text-decoration: none;
 }
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px; /* wysokość paska w poziomie */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+}

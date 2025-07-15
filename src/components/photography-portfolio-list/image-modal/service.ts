@@ -81,6 +81,5 @@ export const useImageModalService = ({
     currentImage,
     handleNextPicture,
     handlePreviousPicture,
-    scrollToImage,
   };
 };

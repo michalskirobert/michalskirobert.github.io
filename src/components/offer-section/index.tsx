@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const OfferSection = () => (
   <CustomPage title="My offer" subtitle="Software Development" imageUrl={offer}>
-    {/* <article className="!mb-2 !mt-2">
+    <article className="!mb-2 !mt-2">
       <h3 className="!mb-2">For photography:</h3>
       <p>
         I&apos;m a Polish photographer who specializes in stock photos, fashion,
@@ -21,7 +21,7 @@ export const OfferSection = () => (
         Pricing is available after a free consultation, so we can discuss your
         vision and prepare a custom offer that suits you best.
       </p>
-    </article> */}
+    </article>
     <article>
       <p>
         Besides photography, I’m passionate about building modern, user-friendly

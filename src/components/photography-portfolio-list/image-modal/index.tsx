@@ -19,13 +19,8 @@ export const Modal = ({
   setImg,
   toggle,
 }: ImageModalProps) => {
-  const {
-    currentImage,
-    scrollRef,
-    scrollToImage,
-    handleNextPicture,
-    handlePreviousPicture,
-  } = useImageModalService({ filteredList, img, isOpen, setImg, toggle });
+  const { currentImage, scrollRef, handleNextPicture, handlePreviousPicture } =
+    useImageModalService({ filteredList, img, isOpen, setImg, toggle });
   if (!isOpen) return null;
 
   return (
@@ -34,6 +29,7 @@ export const Modal = ({
         <button
           className="absolute top-2 right-5 text-[var(--clr-accent)] shadow-2xl cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in"
           aria-label="Close modal"
+          onClick={toggle}
         >
           <CgClose size={40} />
         </button>
@@ -63,8 +59,7 @@ export const Modal = ({
         </div>
         <div
           ref={scrollRef}
-          className="flex flex-row gap-2 mt-5 w-2/3 overflow-x-scroll overflow-y-hidden overscroll-auto"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex flex-row gap-2 mt-5 w-2/3 overflow-x-scroll overflow-y-hidden custom-scrollbar"
         >
           {filteredList.map(({ src, title }, index) => (
             <CustomImage
