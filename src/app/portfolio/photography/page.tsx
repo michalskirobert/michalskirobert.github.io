@@ -3,7 +3,7 @@ import { CustomPage } from "@src/components/shared/page";
 
 import { portfolioList } from "./utils";
 
-import photographyImage from "@public/photography_offer_grid.jpg";
+import photographyImage from "@public/assets/photography_offer_grid.jpg";
 
 export const generateMetadata = async () => {
   return {

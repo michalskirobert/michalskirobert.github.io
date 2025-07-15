@@ -3,7 +3,7 @@ import { links } from "./utils";
 
 export default function Footer() {
   return (
-    <footer className="!flex gap-1 flex-col items-center !bg-[var(--clr-secondary)] !bg-[url(/batik.png)] w-full h-min-[200px] !py-5 !text-shadow-lg">
+    <footer className="!flex gap-1 flex-col items-center !bg-[var(--clr-secondary)] !bg-[url(/assets/batik.png)] w-full h-min-[200px] !py-5 !text-shadow-lg">
       <div className="!flex gap-2">
         {links.map(({ Icon, href }, i) => (
           <Link key={i} {...{ href, target: "_blank" }}>

@@ -1,4 +1,4 @@
-import logo from "@public/logo.png";
+import logo from "@public/assets/logo.png";
 import { CustomLoader } from "@src/components/shared/loader";
 import Image from "next/image";
 

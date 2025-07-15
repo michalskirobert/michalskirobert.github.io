@@ -1,7 +1,7 @@
 import { PortfolioItem } from "@src/components/portfolio-list/utils";
 
-import mainPage from "@public/main-page.jpg";
-import indpol from "@public/indpol.jpg";
+import mainPage from "@public/portfolio/software/main-page.jpg";
+import indpol from "@public/portfolio/software/indpol.jpg";
 
 export const portfolioList: PortfolioItem[] = [
   {

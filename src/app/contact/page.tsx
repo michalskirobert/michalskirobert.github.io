@@ -1,6 +1,6 @@
 import { CustomPage } from "@shared/page";
 
-import contactImg from "@public/contact_img.jpg";
+import contactImg from "@public/assets/contact_img.jpg";
 import ContactForm from "@src/components/contact-form/wrapper";
 
 export const generateMetadata = async () => {

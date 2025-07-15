@@ -6,9 +6,9 @@ import Link from "next/link";
 import { useBack } from "@src/hooks/use-back";
 import { FaArrowLeft } from "react-icons/fa";
 
-import photographyOffer from "@public/photography_offer_grid.jpg";
-import softwareOffer from "@public/software_offer_grid.jpg";
-import { CustomImage } from "../shared/image";
+import photographyOffer from "@public/assets/photography_offer_grid.jpg";
+import softwareOffer from "@public/assets/software_offer_grid.jpg";
+import { CustomImage } from "@shared/image";
 
 interface Props {
   type: "offer" | "portfolio";

@@ -1,6 +1,6 @@
-import { CustomPage } from "../shared/page";
+import { CustomPage } from "@shared/page";
 
-import offer from "@public/offer.jpg";
+import offer from "@public/assets/offer.jpg";
 
 import Link from "next/link";
 

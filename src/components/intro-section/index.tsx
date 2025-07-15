@@ -3,10 +3,10 @@
 import { Section } from "@src/components/shared/section";
 import { CustomButton } from "@src/components/shared/button";
 
-import selfie from "@public/robert.jpg";
+import selfie from "@public/assets/robert.jpg";
 import { useRouter } from "next/navigation";
 import { ROUTER_PATHS } from "@src/utils/constants";
-import { CustomImage } from "../shared/image";
+import { CustomImage } from "@shared/image";
 
 export const IntroSection = () => {
   const router = useRouter();

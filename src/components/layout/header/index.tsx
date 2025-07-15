@@ -64,7 +64,7 @@ const Header = () => {
         className={`
     fixed inset-0 !h-[100vh]
     !bg-[var(--clr-dark)] text-[var(--clr-light)]
-    !bg-[url("/batik.png")]
+    !bg-[url("/assets/batik.png")]
     transition-transform duration-500 ease-in-out
     ${open ? "translate-x-0" : "-translate-x-full"}
   `}

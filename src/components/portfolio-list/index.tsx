@@ -5,7 +5,7 @@ import Link from "next/link";
 import { PortfolioItem } from "./utils";
 import { FaGithub } from "react-icons/fa";
 import { MdPreview } from "react-icons/md";
-import { CustomImage } from "../shared/image";
+import { CustomImage } from "@shared/image";
 
 interface Props {
   portfolioList: PortfolioItem[];
