@@ -27,17 +27,21 @@ export const Modal = ({
     <div className="fixed left-0 top-0 h-[100vh] w-[100vw] bg-black/70 backdrop-blur-sm z-10">
       <div className="relative flex flex-col my-auto mx-auto items-center justify-center h-[100vh]">
         <button
-          className="absolute top-2 right-5 text-[var(--clr-accent)] shadow-2xl cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in"
+          className="absolute top-2 right-5 text-[var(--clr-accent)] shadow-2xl cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in z-30"
           aria-label="Close modal"
           onClick={toggle}
         >
-          <CgClose size={40} />
+          <CgClose size={30} />
         </button>
         <div className="relative flex flex-col items-center justify-center w-full h-[75%]">
           <button>
             <FaChevronLeft
               size={60}
-              className="absolute left-0 -bottom-22 text-[var(--clr-accent)] cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in"
+              className={`absolute ${
+                img === 0
+                  ? "text-[var(--clr-secondary)] text-shadow-2xs cursor-not-allowed"
+                  : "text-[var(--clr-accent)] cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in"
+              } left-0 -bottom-29 `}
               onClick={handlePreviousPicture}
               aria-label="Go back"
             />
@@ -52,14 +56,23 @@ export const Modal = ({
           <button onClick={handleNextPicture}>
             <FaChevronRight
               size={60}
-              className="absolute right-0 -bottom-22 text-[var(--clr-accent)] cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in"
+              className={`absolute right-0 -bottom-29 ${
+                (img || 0) + 1 === filteredList.length
+                  ? "text-[var(--clr-secondary)] text-shadow-2xs cursor-not-allowed"
+                  : "text-[var(--clr-accent)] cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in"
+              } `}
               aria-label="Go forward"
             />
           </button>
         </div>
+        <div className="pt-2">
+          <h3 className="truncate text-[var(--clr-accent)]">
+            {currentImage.title} - {currentImage.category}
+          </h3>
+        </div>
         <div
           ref={scrollRef}
-          className="flex flex-row gap-2 mt-5 w-2/3 overflow-x-scroll overflow-y-hidden custom-scrollbar"
+          className="flex flex-row gap-2 mt-2 w-2/3 overflow-x-scroll overflow-y-hidden custom-scrollbar"
         >
           {filteredList.map(({ src, title }, index) => (
             <CustomImage
