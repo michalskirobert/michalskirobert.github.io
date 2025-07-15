@@ -15,7 +15,7 @@ export default function PortfolioSoftwarePage() {
   return (
     <CustomPage
       title="Portfolio"
-      subtitle="list"
+      subtitle="Software projects"
       imageUrl={softwareImage}
       fullScreen
       showNav

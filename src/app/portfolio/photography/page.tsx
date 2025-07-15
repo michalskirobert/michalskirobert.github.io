@@ -16,7 +16,7 @@ export default function photographyPortfolioPage() {
   return (
     <CustomPage
       title="Portfolio"
-      subtitle="list"
+      subtitle="Photo gallery"
       imageUrl={photographyImage}
       fullScreen
       showNav
