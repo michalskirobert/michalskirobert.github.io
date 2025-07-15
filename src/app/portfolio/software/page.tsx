@@ -1,5 +1,5 @@
-import PortfolioList from "@src/components/software-portfolio-list";
-import { CustomPage } from "@src/components/shared/page";
+import PortfolioList from "@components/software-portfolio-list";
+import { CustomPage } from "@components/shared/page";
 import { portfolioList } from "./utils";
 
 import softwareImage from "@public/assets/software_offer_grid.jpg";

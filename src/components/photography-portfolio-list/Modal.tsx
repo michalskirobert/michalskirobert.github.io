@@ -2,12 +2,7 @@ import { StaticImageData } from "next/image";
 import { CustomImage } from "../shared/image";
 import { CgClose } from "react-icons/cg";
 import { useEffect } from "react";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaChevronLeft,
-  FaChevronRight,
-} from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface Props {
   src: StaticImageData;
