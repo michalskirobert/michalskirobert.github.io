@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 
 import { Input } from "../../components/contact-form/Input";
 import { Textarea } from "../../components/contact-form/Textarea";
-import { CustomButton } from "../shared/custom-button";
+import { CustomButton } from "../shared/button";
 import { FaPlane } from "react-icons/fa";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "./validation-schema";

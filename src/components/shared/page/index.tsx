@@ -7,12 +7,13 @@ import { useBack } from "@hooks/use-back";
 import { FaArrowLeft } from "react-icons/fa";
 
 import styles from "./styles.module.scss";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
+import { CustomImage } from "../image";
 
 interface Props {
   title: string;
   children: ReactNode;
-  imageUrl?: StaticImageData | string;
+  imageUrl: StaticImageData;
   showNav?: boolean;
   subtitle?: string;
   fullScreen?: boolean;
@@ -46,13 +47,7 @@ export const CustomPage = ({
         <h2 className={styles.title}>{title}</h2>
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         {children}
-        <Image
-          className={styles.img}
-          src={imageUrl || ""}
-          alt="Photography"
-          width={0}
-          height={0}
-        />
+        <CustomImage className={styles.img} src={imageUrl} alt={title} />
       </section>
     </div>
   );

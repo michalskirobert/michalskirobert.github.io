@@ -1,17 +1,17 @@
-import { useRouter } from "next/navigation";
+import { ROUTER_PATHS } from "@src/utils/constants";
+import { usePathname, useRouter } from "next/navigation";
 
 export const useBack = () => {
   const router = useRouter();
 
+  const pathname = usePathname();
+
   const handleBack = () => {
-    if (
-      document.referrer &&
-      document.referrer.includes(window.location.hostname)
-    ) {
-      router.back();
-    } else {
-      router.push("/");
-    }
+    if (pathname === "/") return;
+
+    const previousPathName = pathname.split("/").slice(0, -1).join("/");
+
+    router.push(previousPathName || ROUTER_PATHS.HOME);
   };
 
   return { handleBack };

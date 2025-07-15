@@ -8,6 +8,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 import photographyOffer from "@public/photography_offer_grid.jpg";
 import softwareOffer from "@public/software_offer_grid.jpg";
+import { CustomImage } from "../shared/image";
 
 interface Props {
   type: "offer" | "portfolio";
@@ -30,12 +31,10 @@ const CategoryPicker = ({ type }: Props) => {
       </div>
       <div className="flex flex-wrap justify-center items-center gap-2">
         <Link href={`/${type}/photography`}>
-          <Image
+          <CustomImage
             className="!w-full !max-h-[300px] object-cover shadow-bs"
             src={photographyOffer}
             alt={type}
-            width={0}
-            height={0}
           />
         </Link>
         <Link href={`/${type}/software`}>

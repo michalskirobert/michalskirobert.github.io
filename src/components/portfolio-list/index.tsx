@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 import { PortfolioItem } from "./utils";
 import { FaGithub } from "react-icons/fa";
 import { MdPreview } from "react-icons/md";
+import { CustomImage } from "../shared/image";
 
 interface Props {
   portfolioList: PortfolioItem[];
@@ -19,11 +19,9 @@ const PortfolioList = ({ portfolioList }: Props) => {
           key={title}
           className="flex flex-col w-full md:w-[200px] h-auto shadow-lg gap-2"
         >
-          <Image
+          <CustomImage
             {...{
               src,
-              height: 0,
-              width: 0,
               alt: title,
               className:
                 "w-full h-[150px] shadow-sm object-cover hover:scale-110 transition-transform duration-550",
