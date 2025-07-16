@@ -35,13 +35,6 @@ export default function PhotographyOffer() {
             </ul>
           </li>
           <li>
-            <strong>Event photography</strong>
-            <ul className="list-disc pl-5 mt-1">
-              <li>Without MUA: from 500 zł per hour</li>
-              <li>With MUA: from 700 zł per hour</li>
-            </ul>
-          </li>
-          <li>
             <strong>Landscape and nature photography</strong>
             <ul className="list-disc pl-5 mt-1">
               <li>Outdoor session: from 400 zł per hour</li>

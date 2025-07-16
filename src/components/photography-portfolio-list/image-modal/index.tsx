@@ -25,61 +25,69 @@ export const Modal = ({
 
   return (
     <div className="fixed left-0 top-0 h-[100vh] w-[100vw] bg-black/70 backdrop-blur-sm z-10">
-      <div className="relative flex flex-col my-auto mx-auto items-center justify-center h-[100vh]">
+      <div className="relative flex flex-col my-auto mx-auto items-center justify-between h-full w-full max-w-[1200px]">
         <button
-          className="absolute top-2 right-5 text-[var(--clr-accent)] shadow-2xl cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in z-30"
+          className="absolute top-2 right-5 text-yellow-400 shadow-lg cursor-pointer hover:text-yellow-300 hover:scale-110 transition duration-300 ease-in z-30"
           aria-label="Close modal"
           onClick={toggle}
         >
           <CgClose size={30} />
         </button>
-        <div className="relative flex flex-col items-center justify-center w-full h-[75%]">
-          <button>
-            <FaChevronLeft
-              size={60}
-              className={`absolute ${
-                img === 0
-                  ? "text-[var(--clr-secondary)] text-shadow-2xs cursor-not-allowed"
-                  : "text-[var(--clr-accent)] cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in"
-              } left-0 -bottom-29 `}
-              onClick={handlePreviousPicture}
-              aria-label="Go back"
-            />
+
+        <div className="relative flex flex-col items-center justify-center w-full max-h-[72vh] flex-grow">
+          {/* Strzałka w lewo */}
+          <button
+            className={`absolute left-0 lg:left-45 top-1/2 transform -translate-y-1/2 z-20 rounded-full ${
+              img === 0
+                ? "hidden"
+                : "text-yellow-400 hover:text-yellow-300 cursor-pointer transition duration-300 ease-in"
+            }`}
+            onClick={handlePreviousPicture}
+            aria-label="Go back"
+          >
+            <FaChevronLeft size={40} />
           </button>
+
           <CustomImage
             {...{
               src: currentImage.src,
               alt: currentImage.title,
-              className: "h-full w-full p-5 shadow-2xl object-contain",
+              className: "max-h-[70vh] md:!h-[100vh] w-auto object-contain p-5",
             }}
           />
-          <button onClick={handleNextPicture}>
-            <FaChevronRight
-              size={60}
-              className={`absolute right-0 -bottom-29 ${
-                (img || 0) + 1 === filteredList.length
-                  ? "text-[var(--clr-secondary)] text-shadow-2xs cursor-not-allowed"
-                  : "text-[var(--clr-accent)] cursor-pointer hover:text-amber-200 hover:scale-110 transition duration-500 ease-in"
-              } `}
-              aria-label="Go forward"
-            />
+
+          {/* Strzałka w prawo */}
+          <button
+            className={`absolute text-sm right-0 lg:right-45 top-1/2 transform -translate-y-1/2 z-20 ${
+              (img || 0) + 1 === filteredList.length
+                ? "hidden"
+                : "text-yellow-400 hover:text-yellow-300 cursor-pointer transition duration-300 ease-in"
+            }`}
+            onClick={handleNextPicture}
+            aria-label="Go forward"
+          >
+            <FaChevronRight size={40} />
           </button>
         </div>
-        <div className="pt-2">
-          <h3 className="truncate text-[var(--clr-accent)]">
+
+        {/* Tytuł przeniesiony na osobny pasek pod zdjęciem */}
+        <div className="w-full bg-black bg-opacity-70 text-center py-3 px-5 mt-2 rounded-md shadow-lg">
+          <h3 className="truncate text-yellow-400 text-lg font-semibold">
             {currentImage.title} - {currentImage.category}
           </h3>
         </div>
+
+        {/* Karuzela miniaturek */}
         <div
           ref={scrollRef}
-          className="flex flex-row gap-2 mt-2 w-2/3 overflow-x-scroll overflow-y-hidden custom-scrollbar"
+          className="flex flex-row gap-2 mt-2 w-full overflow-x-scroll overflow-y-hidden custom-scrollbar p-2"
         >
           {filteredList.map(({ src, title }, index) => (
             <CustomImage
               key={`${title}-${index}`}
               {...{
-                className: `h-20 w-20 object-cover ${
-                  img === index ? "border-2 border-amber-200 scale-120" : ""
+                className: `h-20 w-20 object-cover border-2 transition ${
+                  img === index ? "border-yellow-400" : "border-transparent"
                 }`,
                 src,
                 alt: title,

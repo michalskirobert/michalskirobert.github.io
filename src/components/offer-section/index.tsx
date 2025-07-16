@@ -9,11 +9,11 @@ export const OfferSection = () => (
     <article className="!mb-2 !mt-2">
       <h3 className="!mb-2">For photography:</h3>
       <p>
-        I&apos;m a Polish photographer who specializes in stock photos, fashion,
-        clothing, portraits, and family sessions. I often find inspiration
-        during my travels, especially in Asia. Every year, I spend time in
-        Singapore, Indonesia (Batam), and Malaysia, where I’m sometimes
-        personally available for photo sessions and projects.
+        I&apos;m a Polish photographer who specializes in stock, packshoots,
+        photos, fashion, clothing, portraits. I often find inspiration during my
+        travels, especially in Asia. Every year, I spend time in Singapore,
+        Indonesia (Batam), and Malaysia, where I’m sometimes personally
+        available for photo sessions and projects.
       </p>
       <p>
         Whether you&apos;re looking for creative fashion shots, professional
