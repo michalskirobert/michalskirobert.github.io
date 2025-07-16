@@ -35,7 +35,7 @@ export const Modal = ({
         </button>
 
         <div className="relative flex flex-col items-center justify-center w-full max-h-[72vh] flex-grow">
-          {/* Strzałka w lewo */}
+          {/* Prev img */}
           <button
             className={`absolute left-0 lg:left-45 top-1/2 transform -translate-y-1/2 z-20 rounded-full ${
               img === 0
@@ -56,7 +56,7 @@ export const Modal = ({
             }}
           />
 
-          {/* Strzałka w prawo */}
+          {/* Next img */}
           <button
             className={`absolute text-sm right-0 lg:right-45 top-1/2 transform -translate-y-1/2 z-20 ${
               (img || 0) + 1 === filteredList.length
@@ -70,17 +70,18 @@ export const Modal = ({
           </button>
         </div>
 
-        {/* Tytuł przeniesiony na osobny pasek pod zdjęciem */}
+        {/* Title*/}
         <div className="w-full bg-black bg-opacity-70 text-center py-3 px-5 mt-2 rounded-md shadow-lg">
           <h3 className="truncate text-yellow-400 text-lg font-semibold">
             {currentImage.title} - {currentImage.category}
           </h3>
         </div>
 
-        {/* Karuzela miniaturek */}
+        {/* Carousel*/}
         <div
           ref={scrollRef}
-          className="flex flex-row gap-2 mt-2 w-full overflow-x-scroll overflow-y-hidden custom-scrollbar p-2"
+          style={{ maxHeight: "calc(72vh - env(safe-area-inset-bottom))" }}
+          className="flex flex-row gap-2 mt-2 w-full overflow-x-scroll overflow-y-hidden custom-scrollbar p-2 pb-[env(safe-area-inset-bottom)]"
         >
           {filteredList.map(({ src, title }, index) => (
             <CustomImage
