@@ -36,6 +36,9 @@
   --font-mono: var(--font-geist-mono);
   --ff-primary: 'Source Sans 3', sans-serif;
   --ff-secondary: 'Source Code Pro', monospace;
+
+  /* Safari */
+   --vh: 1vh;
 }
 
 @media (min-width: 800px) {

@@ -21,11 +21,17 @@ export const Modal = ({
 }: ImageModalProps) => {
   const { currentImage, scrollRef, handleNextPicture, handlePreviousPicture } =
     useImageModalService({ filteredList, img, isOpen, setImg, toggle });
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed left-0 top-0 h-[100vh] w-[100vw] bg-black/70 backdrop-blur-sm z-10">
-      <div className="relative flex flex-col my-auto mx-auto items-center justify-between h-full w-full max-w-[1200px]">
+    <div
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 overflow-hidden"
+      style={{
+        WebkitOverflowScrolling: "touch",
+      }}
+    >
+      <div className="flex flex-col h-full w-full max-w-[1200px] mx-auto relative">
         <button
           className="absolute top-2 right-5 text-yellow-400 shadow-lg cursor-pointer hover:text-yellow-300 hover:scale-110 transition duration-300 ease-in z-30"
           aria-label="Close modal"
@@ -33,11 +39,14 @@ export const Modal = ({
         >
           <CgClose size={30} />
         </button>
-
-        <div className="relative flex flex-col items-center justify-center w-full max-h-[72vh] flex-grow">
-          {/* Prev img */}
+        <div
+          className="relative flex items-center justify-center w-full px-12"
+          style={{
+            height: "calc(100vh - 210px)",
+          }}
+        >
           <button
-            className={`absolute left-0 lg:left-45 top-1/2 transform -translate-y-1/2 z-20 rounded-full ${
+            className={`absolute left-0 top-1/2 transform -translate-y-1/2 z-20 ${
               img === 0
                 ? "hidden"
                 : "text-yellow-400 hover:text-yellow-300 cursor-pointer transition duration-300 ease-in"
@@ -49,16 +58,12 @@ export const Modal = ({
           </button>
 
           <CustomImage
-            {...{
-              src: currentImage.src,
-              alt: currentImage.title,
-              className: "max-h-[70vh] md:!h-[100vh] w-auto object-contain p-5",
-            }}
+            src={currentImage.src}
+            alt={currentImage.title}
+            className="h-full w-full object-contain p-5"
           />
-
-          {/* Next img */}
           <button
-            className={`absolute text-sm right-0 lg:right-45 top-1/2 transform -translate-y-1/2 z-20 ${
+            className={`absolute right-0 top-1/2 transform -translate-y-1/2 z-20 ${
               (img || 0) + 1 === filteredList.length
                 ? "hidden"
                 : "text-yellow-400 hover:text-yellow-300 cursor-pointer transition duration-300 ease-in"
@@ -69,33 +74,30 @@ export const Modal = ({
             <FaChevronRight size={40} />
           </button>
         </div>
-
-        {/* Title*/}
-        <div className="w-full bg-black bg-opacity-70 text-center py-3 px-5 mt-2 rounded-md shadow-lg">
-          <h3 className="truncate text-yellow-400 text-lg font-semibold">
+        <div className="flex flex-col bg-black bg-opacity-70 text-center w-full px-5 pt-2">
+          <h3 className="truncate text-yellow-400 text-lg font-semibold mb-2">
             {currentImage.title} - {currentImage.category}
           </h3>
-        </div>
 
-        {/* Carousel*/}
-        <div
-          ref={scrollRef}
-          style={{ maxHeight: "calc(72vh - env(safe-area-inset-bottom))" }}
-          className="flex flex-row gap-2 mt-2 w-full overflow-x-scroll overflow-y-hidden custom-scrollbar p-2 pb-[env(safe-area-inset-bottom)]"
-        >
-          {filteredList.map(({ src, title }, index) => (
-            <CustomImage
-              key={`${title}-${index}`}
-              {...{
-                className: `h-20 w-20 object-cover border-2 transition ${
+          <div
+            ref={scrollRef}
+            className="flex flex-row gap-2 w-full overflow-x-scroll overflow-y-hidden custom-scrollbar p-2"
+            style={{
+              marginBottom: "env(safe-area-inset-bottom, 30px)",
+            }}
+          >
+            {filteredList.map(({ src, title }, index) => (
+              <CustomImage
+                key={`${title}-${index}`}
+                className={`h-20 w-20 object-cover border-2 transition ${
                   img === index ? "border-yellow-400" : "border-transparent"
-                }`,
-                src,
-                alt: title,
-                onClick: () => setImg(index),
-              }}
-            />
-          ))}
+                }`}
+                src={src}
+                alt={title}
+                onClick={() => setImg(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
