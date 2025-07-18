@@ -15,6 +15,7 @@ import { toast } from "@lib/toast";
 
 import axios from "axios";
 import { DEFAULT_VALUES } from "./utils";
+import { ContactResponseProps } from "@src/app/api/send/types";
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,16 +30,15 @@ const ContactForm = () => {
     setIsLoading(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
     try {
-      await axios.post<string>("api/send", data);
-      toast.success(
-        "Thank you for your message! A confirmation email has been sent. I’ll review your message and get back to you as soon as possible."
-      );
+      const resp = await axios.post<ContactResponseProps>("api/send", data);
+      toast.success(resp.data.message);
       reset(DEFAULT_VALUES);
-    } catch (err) {
-      console.error("Error sending message:", err);
-      toast.error(
-        "Oops! Something went wrong while sending your message. Please try again later or contact me directly via email."
-      );
+    } catch (error) {
+      console.error("Error sending message:", error);
+
+      if (error instanceof Error) {
+        toast.error(error.message);
+      }
     } finally {
       setIsLoading(false);
     }
