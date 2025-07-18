@@ -1,17 +1,11 @@
 "use client";
 
-import React, {
-  createContext,
-  useState,
-  useCallback,
-  ReactNode,
-  useEffect,
-} from "react";
+import React, { createContext, useState, useCallback, ReactNode } from "react";
 
 export type ToastType = "success" | "error" | "info";
 
 interface Toast {
-  id: number;
+  id: string;
   message: string;
   type: ToastType;
   visible: boolean;
@@ -29,10 +23,10 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
   const addToast = useCallback((type: ToastType, message: string) => {
-    const id = Date.now();
+    const id = crypto.randomUUID();
+
     setToasts((prev) => [...prev, { id, type, message, visible: true }]);
 
-    // Po 2.7s ustawiamy visible=false żeby zacząć animację wychodzenia
     setTimeout(() => {
       setToasts((prev) =>
         prev.map((toast) =>
@@ -41,21 +35,18 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       );
     }, 2700);
 
-    // Po 3s usuwamy toast
     setTimeout(() => {
       setToasts((prev) => prev.filter((toast) => toast.id !== id));
     }, 3000);
   }, []);
 
-  const removeToast = (id: number) => {
-    // Ustaw visible=false aby rozpocząć animację wychodzenia
+  const removeToast = (id: string) => {
     setToasts((prev) =>
       prev.map((toast) =>
         toast.id === id ? { ...toast, visible: false } : toast
       )
     );
 
-    // Usuń po animacji 300ms
     setTimeout(() => {
       setToasts((prev) => prev.filter((toast) => toast.id !== id));
     }, 300);
