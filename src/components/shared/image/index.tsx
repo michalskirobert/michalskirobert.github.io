@@ -16,6 +16,7 @@ export const CustomImage = ({ src, className, alt, onClick }: Props) => {
         width: 220,
         height: 220,
         placeholder: "blur",
+        title: alt,
         onClick,
       }}
     />

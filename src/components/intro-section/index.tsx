@@ -27,9 +27,9 @@ export const IntroSection = () => {
           alt="NurByte"
         />
       </div>
-      <p className="font-secondary bg-[var(--clr-primary)]! !py-3 !px-3 text-right font-[var(--ff-secondary)] !mx-auto !mb-2 !text-xl">
+      <h2 className="font-secondary bg-[var(--clr-primary)]! !py-3 !px-3 text-right font-[var(--ff-secondary)] !mx-auto !mb-2 !text-xl">
         software engineer
-      </p>
+      </h2>
       <div className="flex justify-center mt-[10px] gap-1 flex-wrap">
         <CustomButton
           {...{

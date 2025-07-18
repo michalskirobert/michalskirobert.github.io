@@ -2,54 +2,51 @@
 
 @layer theme, base, components, utilities;
 
-
-
-
 @layer theme {
   :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 
-  /* Font weights */
-  --fw-reg: 300;
-  --fw-bold: 900;
+    /* Font weights */
+    --fw-reg: 300;
+    --fw-bold: 900;
 
-  /* Colors */
-  --clr-light: #ffffff;
-  --clr-dark: #001D3D;
-  --clr-accent: #FFD60A;
-  --clr-primary: #FFC300;
-  --clr-secondary: #003566;
+    /* Colors */
+    --clr-light: #ffffff;
+    --clr-dark: #001d3d;
+    --clr-accent: #ffd60a;
+    --clr-primary: #ffc300;
+    --clr-secondary: #003566;
 
-  /* Font sizes */
-  --fs-h1: 3rem;
-  --fs-h2: 2.25rem;
-  --fs-h3: 1.25rem;
-  --fs-body: 1rem;
+    /* Font sizes */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
 
-  /* Shadows & other */
-  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
-  --cubic: cubic-bezier(0.64, 0.09, 0.08, 1);
+    /* Shadows & other */
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+      0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+    --cubic: cubic-bezier(0.64, 0.09, 0.08, 1);
 
-  /* Fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --ff-primary: 'Source Sans 3', sans-serif;
-  --ff-secondary: 'Source Code Pro', monospace;
+    /* Fonts */
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --ff-primary: "Source Sans 3", sans-serif;
+    --ff-secondary: "Source Code Pro", monospace;
 
-  /* Safari */
-   --vh: 1vh;
-}
-
-@media (min-width: 800px) {
-  :root {
-    --fs-h1: 4.5rem;
-    --fs-h2: 3.75rem;
-    --fs-h3: 1.5rem;
-    --fs-body: 1.125rem;
+    /* Safari */
+    --vh: 1vh;
   }
-}
 
+  @media (min-width: 800px) {
+    :root {
+      --fs-h1: 4.5rem;
+      --fs-h2: 3.75rem;
+      --fs-h3: 1.5rem;
+      --fs-body: 1.125rem;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,12 +61,10 @@
     grid-area: img;
   }
   .shadow-bs {
-    box-shadow:
-      0.25em 0.25em 0.75em rgba(0,0,0,0.25),
-      0.125em 0.125em 0.25em rgba(0,0,0,0.15);
+    box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+      0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
   }
 }
-
 
 *,
 *::before,
@@ -91,15 +86,11 @@ body {
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
   line-height: 1.6;
-
 }
-
-
 
 strong {
   font-weight: var(--fw-bold);
 }
-
 
 h1,
 h2,
@@ -137,7 +128,7 @@ img {
 }
 
 a {
-  color: var(--clr-accent);
+  color: var(--clr-primary);
   font-size: var(--fs-body);
   display: inline-block;
   text-decoration: underline;
@@ -145,9 +136,14 @@ a {
 }
 
 a:hover {
- transform: scale(1.1)!important;
- color: var(--clr-primary);
- text-decoration: none;
+  color: var(--clr-primary);
+  text-decoration: none;
+}
+
+@media (min-width: 1000px) {
+  a:hover {
+    transform: scale(1.1) !important;
+  }
 }
 
 .custom-scrollbar {

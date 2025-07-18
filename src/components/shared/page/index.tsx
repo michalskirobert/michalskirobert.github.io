@@ -44,8 +44,8 @@ export const CustomPage = ({
         </button>
       )}
       <section className={styles.section}>
-        <h2 className={styles.title}>{title}</h2>
-        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+        <h1 className={styles.title}>{title}</h1>
+        {subtitle && <h2 className={styles.subtitle}>{subtitle}</h2>}
         {children}
         <CustomImage className={styles.img} src={imageUrl} alt={title} />
       </section>

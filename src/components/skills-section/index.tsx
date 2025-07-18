@@ -18,7 +18,12 @@ export const SkillsSection = () => {
         <Skill title="Tools">{renderIcons(toolsIcons)}</Skill>
         <Skill title="Languages">
           {languagesFlags.map((code) => (
-            <CircleFlag key={code} countryCode={code} className="h-[25px]" />
+            <CircleFlag
+              key={code}
+              countryCode={code}
+              className="h-[25px]"
+              alt={code}
+            />
           ))}
         </Skill>
         <Skill title="Methods">
