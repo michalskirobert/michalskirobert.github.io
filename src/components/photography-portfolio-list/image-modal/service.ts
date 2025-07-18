@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ImageModalProps } from ".";
 import { scrollToImage } from "./utils";
 
@@ -12,6 +12,20 @@ export const useImageModalService = ({
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const currentImage = filteredList[img || 0];
+
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+
+  const handleTouchEnd = () => {
+    const distance = touchStartX - touchEndX;
+    const threshold = 50;
+
+    if (distance > threshold) handleNextPicture();
+    else if (distance < -threshold) handlePreviousPicture();
+  };
+
+  const atStart = img === 0;
+  const atEnd = (img ?? 0) + 1 === filteredList.length;
 
   const handleNextPicture = () => {
     if (img === null || img + 1 === filteredList.length) return;
@@ -76,9 +90,34 @@ export const useImageModalService = ({
     };
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") {
+        handleNextPicture();
+      } else if (e.key === "ArrowLeft") {
+        handlePreviousPicture();
+      } else if (e.key === "Escape") {
+        toggle();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, handleNextPicture, handlePreviousPicture, toggle]);
+
   return {
     scrollRef,
     currentImage,
+    atStart,
+    atEnd,
+    handleTouchEnd,
+    setTouchStartX,
+    setTouchEndX,
     handleNextPicture,
     handlePreviousPicture,
   };

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FILTER, FilterType, PhotographyPortfolioItem } from "./utils";
 import { CustomImage } from "@shared/image";
-import { Modal } from "./image-modal";
+import { ImageModal } from "./image-modal";
 
 interface Props {
   portfolioList: PhotographyPortfolioItem[];
@@ -69,7 +69,7 @@ const PortfolioList = ({ portfolioList }: Props) => {
           </div>
         </div>
       ))}
-      <Modal {...{ img, filteredList, isOpen, toggle, setImg }} />
+      <ImageModal {...{ img, filteredList, isOpen, toggle, setImg }} />
     </div>
   );
 };

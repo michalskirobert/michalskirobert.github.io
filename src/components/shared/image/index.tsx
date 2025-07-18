@@ -6,10 +6,17 @@ interface Props extends ImageProps {
   height?: number;
 }
 
-export const CustomImage = ({ src, className, alt, onClick }: Props) => {
+export const CustomImage = ({
+  src,
+  className,
+  alt,
+  onClick,
+  ...restProps
+}: Props) => {
   return (
     <Image
       {...{
+        ...restProps,
         src,
         alt,
         className,
