@@ -3,7 +3,6 @@ import { CgClose } from "react-icons/cg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { PhotographyPortfolioItem } from "../utils";
 import { useImageModalService } from "./service";
-import { useState } from "react";
 
 export interface ImageModalProps {
   img: number | null;

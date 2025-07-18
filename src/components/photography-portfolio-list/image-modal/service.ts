@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
+
 import { ImageModalProps } from ".";
 import { scrollToImage } from "./utils";
 
@@ -16,6 +17,27 @@ export const useImageModalService = ({
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
+  const handleNextPicture = useCallback(() => {
+    if (img === null || img + 1 === filteredList.length) return;
+
+    const nextIndex = (img + 1) % filteredList.length;
+    setImg(nextIndex);
+
+    if (!scrollRef?.current) return;
+
+    scrollToImage(scrollRef.current, nextIndex, 60);
+  }, [img, filteredList.length, setImg]);
+
+  const handlePreviousPicture = useCallback(() => {
+    if (img === null || img === 0) return;
+    const prevIndex = (img - 1 + filteredList.length) % filteredList.length;
+    setImg(prevIndex);
+
+    if (!scrollRef?.current) return;
+
+    scrollToImage(scrollRef.current, prevIndex, 60);
+  }, [img, filteredList.length, setImg]);
+
   const handleTouchEnd = () => {
     const distance = touchStartX - touchEndX;
     const threshold = 50;
@@ -26,27 +48,6 @@ export const useImageModalService = ({
 
   const atStart = img === 0;
   const atEnd = (img ?? 0) + 1 === filteredList.length;
-
-  const handleNextPicture = () => {
-    if (img === null || img + 1 === filteredList.length) return;
-
-    const nextIndex = (img + 1) % filteredList.length;
-    setImg(nextIndex);
-
-    if (!scrollRef?.current) return;
-
-    scrollToImage(scrollRef.current, nextIndex, 60);
-  };
-
-  const handlePreviousPicture = () => {
-    if (img === null || img === 0) return;
-    const prevIndex = (img - 1 + filteredList.length) % filteredList.length;
-    setImg(prevIndex);
-
-    if (!scrollRef?.current) return;
-
-    scrollToImage(scrollRef.current, prevIndex, 60);
-  };
 
   useEffect(() => {
     if (isOpen) {
