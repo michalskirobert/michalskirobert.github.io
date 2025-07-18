@@ -24,7 +24,9 @@
       "@shared/*": ["./src/components/shared/*"],
       "@public/*": ["public/*"],
       "@components/*": ["./src/components/*"],
-      "@hooks/*": ["./src/hooks/*"]
+      "@hooks/*": ["./src/hooks/*"],
+      "@providers/*": ["./src/app/providers/*"],
+      "@lib/*": ["./src/app/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

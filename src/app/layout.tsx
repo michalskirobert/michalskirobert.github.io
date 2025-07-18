@@ -6,9 +6,13 @@ import {
   Source_Sans_3,
 } from "next/font/google";
 
-import "./globals.css";
+import { ToastProvider } from "./providers/toast-context";
+
 import Header from "@src/components/layout/header";
 import Footer from "@src/components/layout/footer";
+
+import "./globals.css";
+import { ToastSetter } from "./lib/toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,7 +75,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${sourceSansPro.variable} ${sourceCodePro.variable} antialiased`}
       >
         <Header />
-        <main className="pt-[25px]">{children}</main>
+        <ToastProvider>
+          <ToastSetter />
+          <main className="pt-[25px]">{children}</main>
+        </ToastProvider>
         <Footer />
       </body>
     </html>

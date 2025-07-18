@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { ContactProps } from "@src/components/contact-form/types";
 import { useForm } from "react-hook-form";
@@ -10,21 +10,27 @@ import { CustomButton } from "@shared/button";
 import { FaPlane } from "react-icons/fa";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "./validation-schema";
+import { toast } from "@lib/toast";
+
 import axios from "axios";
+import { DEFAULT_VALUES } from "./utils";
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const { control, handleSubmit } = useForm<ContactProps>({
+  const { control, reset, handleSubmit } = useForm<ContactProps>({
     mode: "onSubmit",
-    defaultValues: { email: "", message: "", name: "", subject: "" },
+    defaultValues: DEFAULT_VALUES,
     resolver: yupResolver(validationSchema),
   });
 
   const onSubmit = async (data: ContactProps) => {
     setIsLoading(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     try {
       await axios.post<string>("api/send", data);
+      toast.success("Your message has been sent");
+      reset(DEFAULT_VALUES);
     } catch (err) {
       console.error("Error sending message:", err);
     } finally {
