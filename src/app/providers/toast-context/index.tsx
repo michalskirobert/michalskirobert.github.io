@@ -1,6 +1,12 @@
 "use client";
 
-import React, { createContext, useState, useCallback, ReactNode } from "react";
+import React, {
+  createContext,
+  useState,
+  useCallback,
+  ReactNode,
+  useRef,
+} from "react";
 
 export type ToastType = "success" | "error" | "info";
 
@@ -22,57 +28,91 @@ export const ToastContext = createContext<ToastContextType | undefined>(
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
+  const hideTimeouts = useRef<Record<string, ReturnType<typeof setTimeout>>>(
+    {}
+  );
+  const removeTimeouts = useRef<Record<string, ReturnType<typeof setTimeout>>>(
+    {}
+  );
+
   const addToast = useCallback((type: ToastType, message: string) => {
     const id = crypto.randomUUID();
 
     setToasts((prev) => [...prev, { id, type, message, visible: true }]);
 
-    setTimeout(() => {
+    hideTimeouts.current[id] = setTimeout(() => {
       setToasts((prev) =>
         prev.map((toast) =>
           toast.id === id ? { ...toast, visible: false } : toast
         )
       );
-    }, 2700);
 
-    setTimeout(() => {
-      setToasts((prev) => prev.filter((toast) => toast.id !== id));
-    }, 3000);
+      removeTimeouts.current[id] = setTimeout(() => {
+        setToasts((prev) => prev.filter((toast) => toast.id !== id));
+        delete hideTimeouts.current[id];
+        delete removeTimeouts.current[id];
+      }, 300);
+    }, 2700);
   }, []);
 
   const removeToast = (id: string) => {
+    clearTimeout(hideTimeouts.current[id]);
+    clearTimeout(removeTimeouts.current[id]);
+
     setToasts((prev) =>
       prev.map((toast) =>
         toast.id === id ? { ...toast, visible: false } : toast
       )
     );
 
-    setTimeout(() => {
+    removeTimeouts.current[id] = setTimeout(() => {
       setToasts((prev) => prev.filter((toast) => toast.id !== id));
+      delete hideTimeouts.current[id];
+      delete removeTimeouts.current[id];
     }, 300);
+  };
+
+  const onMouseEnter = (id: string) => {
+    clearTimeout(hideTimeouts.current[id]);
+    clearTimeout(removeTimeouts.current[id]);
+  };
+
+  const onMouseLeave = (id: string) => {
+    hideTimeouts.current[id] = setTimeout(() => {
+      setToasts((prev) =>
+        prev.map((toast) =>
+          toast.id === id ? { ...toast, visible: false } : toast
+        )
+      );
+      removeTimeouts.current[id] = setTimeout(() => {
+        setToasts((prev) => prev.filter((toast) => toast.id !== id));
+        delete hideTimeouts.current[id];
+        delete removeTimeouts.current[id];
+      }, 300);
+    }, 1500);
   };
 
   return (
     <ToastContext.Provider value={{ addToast }}>
       {children}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+      <div className="fixed top-6 right-6 z-50 flex flex-col gap-4">
         {toasts.map(({ id, type, message, visible }) => (
           <div
             key={id}
             role="alert"
-            onClick={() => removeToast(id)}
+            onMouseEnter={() => onMouseEnter(id)}
+            onMouseLeave={() => onMouseLeave(id)}
             className={`
               rounded-md border border-gray-300 bg-white p-4 shadow-sm w-[300px] cursor-pointer
-              transform transition-all duration-300 ease-in-out
+              transform transition duration-300 ease-in-out
               ${
                 visible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-10"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 -translate-y-10"
               }
             `}
           >
             <div className="flex items-start gap-4">
-              {/* Ikony jak wcześniej */}
               {type === "success" && (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -133,6 +173,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
                 type="button"
                 aria-label="Dismiss alert"
                 className="-m-3 rounded-full p-1.5 text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-700"
+                onClick={() => removeToast(id)}
               >
                 <span className="sr-only">Dismiss popup</span>
                 <svg

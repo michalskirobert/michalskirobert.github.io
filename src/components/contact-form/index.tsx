@@ -29,14 +29,25 @@ const ContactForm = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     try {
       await axios.post<string>("api/send", data);
-      toast.success("Your message has been sent");
+      toast.success(
+        "Thank you for your message! A confirmation email has been sent. I’ll review your message and get back to you as soon as possible."
+      );
       reset(DEFAULT_VALUES);
     } catch (err) {
       console.error("Error sending message:", err);
+      toast.error(
+        "Oops! Something went wrong while sending your message. Please try again later or contact me directly via email."
+      );
     } finally {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    setInterval(() => {
+      toast.success("test");
+    }, 5000);
+  }, []);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
