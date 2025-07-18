@@ -5,7 +5,8 @@ import me from "@public/assets/me_bali.jpg";
 export const generateMetadata = async () => {
   return {
     title: "NurByte | About me",
-    description: "",
+    description:
+      "Discover the story of Robert Michalski, a passionate full-stack developer and former professional photographer with expertise in React, Next.js, TypeScript, Node.js, MongoDB, and PostgreSQL. Learn about his multicultural background, love for Asian cuisine, language skills, and creative pursuits in music and cooking.",
   };
 };
 

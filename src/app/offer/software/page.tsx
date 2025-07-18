@@ -5,6 +5,14 @@ import React from "react";
 
 import softwareImage from "@public/assets/software_offer_grid.jpg";
 
+export const generateMetadata = async () => {
+  return {
+    title: "NurByte | My portfolio",
+    description:
+      "Discover professional software development services by Robert Michalski (NurByte). Specializing in full-stack React, Node.js, React Native, and backend with Express.js and TypeScript. Flexible, scalable solutions with transparent pricing.",
+  };
+};
+
 export default function SoftwareOffer() {
   return (
     <CustomPage

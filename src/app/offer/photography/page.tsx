@@ -4,6 +4,14 @@ import Link from "next/link";
 
 import photographyImage from "@public/assets/photography_offer_grid.jpg";
 
+export const generateMetadata = async () => {
+  return {
+    title: "NurByte | My portfolio",
+    description:
+      "Explore professional photography services by Robert Michalski (NurByte), including portrait, landscape, product, and commercial photography. Flexible packages, competitive pricing, and expert photo editing. Serving clients locally and in Southeast Asia.",
+  };
+};
+
 export default function PhotographyOffer() {
   return (
     <CustomPage

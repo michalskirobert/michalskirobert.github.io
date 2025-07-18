@@ -8,7 +8,8 @@ import photographyImage from "@public/assets/photography_offer_grid.jpg";
 export const generateMetadata = async () => {
   return {
     title: "NurByte | My portfolio - Photography",
-    description: "",
+    description:
+      "Browse Robert Michalski’s professional photography portfolio featuring fashion, product, and packshot photography. Discover high-quality images showcasing years of expertise and creativity.",
   };
 };
 

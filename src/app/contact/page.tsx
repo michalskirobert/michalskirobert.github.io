@@ -6,7 +6,8 @@ import ContactForm from "@src/components/contact-form/wrapper";
 export const generateMetadata = async () => {
   return {
     title: "NurByte | Contact me",
-    description: "",
+    description:
+      "Contact Robert Michalski — software engineer and full-stack JavaScript developer specializing in React, Next.js, Node.js, and TypeScript. Let’s connect and build something great together.",
   };
 };
 

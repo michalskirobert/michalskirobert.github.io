@@ -7,7 +7,8 @@ import softwareImage from "@public/assets/software_offer_grid.jpg";
 export const generateMetadata = async () => {
   return {
     title: "NurByte | My portfolio - Software",
-    description: "",
+    description:
+      "Explore software projects by Robert Michalski, full-stack JavaScript developer specializing in React, Next.js, Node.js, and TypeScript. See real-world apps built with clean, scalable code.",
   };
 };
 

@@ -31,8 +31,33 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "NurByte",
-  description: "Robert Michalski - NurByte",
+  title: "NurByte - Robert Michalski | Software Engineer & Photographer",
+  description:
+    "Official website of Robert Michalski, also known as NurByte. Explore software development projects, photography portfolio, and professional services.",
+  openGraph: {
+    title: "NurByte - Robert Michalski",
+    description:
+      "Explore software engineering and photography portfolios by Robert Michalski.",
+    url: "https://nurbyte.com",
+    siteName: "NurByte",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NurByte Website",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NurByte - Robert Michalski",
+    description:
+      "Software engineering and photography portfolios by Robert Michalski.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
