@@ -142,7 +142,7 @@ a:hover {
 
 @media (min-width: 1000px) {
   a:hover {
-    transform: scale(1.1) !important;
+    transform: scale(1.1);
   }
 }
 
