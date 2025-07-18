@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { ContactProps } from "@src/components/contact-form/types";
 import { useForm } from "react-hook-form";
@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { Input } from "../../components/contact-form/Input";
 import { Textarea } from "../../components/contact-form/Textarea";
 import { CustomButton } from "@shared/button";
+import { LoadingBlocker } from "@shared/loading-blocker";
 import { FaPlane } from "react-icons/fa";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "./validation-schema";
@@ -43,57 +44,53 @@ const ContactForm = () => {
     }
   };
 
-  useEffect(() => {
-    setInterval(() => {
-      toast.success("test");
-    }, 5000);
-  }, []);
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-col">
-        <div className="flex gap-2">
-          <Input
+    <LoadingBlocker {...{ isLoading }}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="flex flex-col">
+          <div className="flex gap-2">
+            <Input
+              {...{
+                control,
+                label: "Name *",
+                name: "name",
+                type: "text",
+                disabled: isLoading,
+              }}
+            />
+            <Input
+              {...{
+                control,
+                label: "Email *",
+                name: "email",
+                type: "email",
+                disabled: isLoading,
+              }}
+            />
+          </div>
+          <div className="flex gap-2">
+            <Input
+              {...{
+                control,
+                label: "Subject *",
+                name: "subject",
+                type: "text",
+                disabled: isLoading,
+              }}
+            />
+          </div>
+          <Textarea
             {...{
               control,
-              label: "Name *",
-              name: "name",
-              type: "text",
-              disabled: isLoading,
-            }}
-          />
-          <Input
-            {...{
-              control,
-              label: "Email *",
-              name: "email",
-              type: "email",
+              label: "Content *",
+              name: "message",
               disabled: isLoading,
             }}
           />
         </div>
-        <div className="flex gap-2">
-          <Input
-            {...{
-              control,
-              label: "Subject *",
-              name: "subject",
-              type: "text",
-              disabled: isLoading,
-            }}
-          />
-        </div>
-        <Textarea
-          {...{
-            control,
-            label: "Content *",
-            name: "message",
-            disabled: isLoading,
-          }}
-        />
-      </div>
-      <CustomButton {...{ content: "Send", icon: <FaPlane />, isLoading }} />
-    </form>
+        <CustomButton {...{ content: "Send", icon: <FaPlane />, isLoading }} />
+      </form>
+    </LoadingBlocker>
   );
 };
 
