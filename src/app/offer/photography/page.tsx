@@ -65,9 +65,9 @@ export default function PhotographyOffer() {
         <p>
           For more details, package deals, or custom requests, feel free to
           contact me directly via email or through my{" "}
-          <a href="/contact" className="text-blue-600 underline">
+          <Link href="/contact" className="text-blue-600 underline">
             contact page
-          </a>
+          </Link>
           . I&apos;m happy to discuss the best solution for your project!
         </p>
         <p>

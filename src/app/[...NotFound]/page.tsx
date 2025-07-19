@@ -1,6 +1,8 @@
 import BackButton from "@components/not-found-back-button/wrapper";
 import { IndonesianLandscapeSVG, WayangPuppetSVG } from "./images";
 
+import Link from "next/link";
+
 const NotFoundPage = async () => (
   <section
     className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8
@@ -25,7 +27,8 @@ const NotFoundPage = async () => (
             Halaman Tidak Ditemukan
           </h2>
           <p className="text-lg text-white/80 max-w-lg mx-auto">
-            The page you're looking for seems to have wandered off to explore...
+            The page you&apos;re looking for seems to have wandered off to
+            explore...
           </p>
         </div>
 
@@ -34,7 +37,7 @@ const NotFoundPage = async () => (
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <a
+          <Link
             href="/"
             className="bg-[#ffc300] !text-[#001d3d] transition-all duration-300 !no-underline hover:bg-[#ffd60a] hover:-translate-y-1 px-8 py-3 rounded-full font-medium text-lg !flex items-center justify-center"
           >
@@ -49,7 +52,7 @@ const NotFoundPage = async () => (
               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
             </svg>
             Back Home
-          </a>
+          </Link>
           <BackButton />
         </div>
       </div>
