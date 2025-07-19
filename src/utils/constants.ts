@@ -7,3 +7,9 @@ export const ROUTER_PATHS = {
   OFFER_PHOTOGRAPHY: "/offer/photography",
   OFFER_SOFTWARE: "/offer/software",
 };
+
+export const API_ENDPOINTS = {
+  GENERATE_CAPTCHA: "/api/generate-captcha",
+  SEND_CONTACT_FORM: "/api/send",
+  VERIFY_CAPTCHA: "/api/verify-captcha",
+};

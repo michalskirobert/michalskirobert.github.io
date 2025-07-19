@@ -16,13 +16,13 @@ export const CustomImage = ({
   return (
     <Image
       {...{
+        placeholder: "blur",
         ...restProps,
         src,
         alt,
         className,
         width: 220,
         height: 220,
-        placeholder: "blur",
         title: alt,
         onClick,
       }}
