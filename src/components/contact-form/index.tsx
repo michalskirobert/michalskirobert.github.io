@@ -33,7 +33,7 @@ const ContactForm = () => {
       
       const isValid = await trigger();
 
-      if(!isValid) return:
+      if(!isValid) return;
       
       const data = getValues();
       const resp = await axios.post<ContactResponseProps>(
