@@ -35,6 +35,7 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nurbyte.vercel.app"), // <--- add this line
   title: "NurByte - Robert Michalski | Software Engineer & Photographer",
   description:
     "Official website of Robert Michalski, also known as NurByte. Explore software development projects, photography portfolio, and professional services.",
