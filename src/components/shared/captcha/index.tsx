@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { CustomButton, CustomButtonProps } from "@shared/button";
 import { checkInvalidClass } from "@utils/functions";
+import { CustomImage } from "@shared/image";
 
 import axios from "axios";
 
@@ -57,7 +58,12 @@ export default function TextCaptcha({ buttonParams, onVerified }: Props) {
 
   return (
     <div>
-      <img src={captcha.image} alt="captcha" className="mb-2" />
+      <CustomImage
+        src={captcha.image}
+        alt="captcha"
+        className="mb-2"
+        title="captcha"
+      />
       <div className="flex gap-1">
         <input
           type="text"
