@@ -1,4 +1,4 @@
-import CategoryPicker from "@src/components/category-picker";
+import CategoryPicker from "@components/category-picker";
 
 export const generateMetadata = async () => {
   return {

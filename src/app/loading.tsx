@@ -1,5 +1,5 @@
 import logo from "@public/assets/logo.png";
-import { CustomLoader } from "@src/components/shared/loader";
+import { CustomLoader } from "@components/shared/loader";
 import Image from "next/image";
 
 export default function Loading() {

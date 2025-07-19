@@ -1,4 +1,4 @@
-import { CustomImage } from "../../shared/image";
+import { CustomImage } from "@shared/image";
 import { CgClose } from "react-icons/cg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { PhotographyPortfolioItem } from "../utils";

@@ -1,8 +1,8 @@
 "use client";
 
-import { ToastContext } from "../providers/toast-context";
+import { ToastContext } from "@providers/toast-context";
 import { useContext } from "react";
-import type { ToastContextType } from "../providers/toast-context";
+import type { ToastContextType } from "@providers/toast-context";
 
 type ToastType = "success" | "error" | "info";
 

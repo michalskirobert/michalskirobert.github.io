@@ -1,5 +1,6 @@
 import { Control, useController } from "react-hook-form";
 import { ContactProps } from "./types";
+import { checkInvalidClass } from "@utils/functions";
 
 interface Props {
   control: Control<ContactProps>;
@@ -14,6 +15,8 @@ export const Textarea = ({ control, name, label, disabled }: Props) => {
     fieldState: { invalid, error },
   } = useController({ name, control });
 
+  const invalidClassName = checkInvalidClass(invalid);
+
   return (
     <div className="w-full">
       <label htmlFor={name}>
@@ -22,13 +25,14 @@ export const Textarea = ({ control, name, label, disabled }: Props) => {
           {...field}
           rows={8}
           id={name}
-          className="mt-0.5 w-full p-2 rounded border-gray-300 shadow-sm sm:text-sm focus-visible:outline-[var(--clr-accent)] transition-colors duration-300"
+          aria-invalid={invalid}
+          className={`${invalidClassName} mt-0.5 w-full p-2 rounded border-gray-300 shadow-sm sm:text-sm focus-visible:outline-[var(--clr-accent)] transition-colors duration-300`}
           disabled={disabled}
         />
-        {invalid && (
-          <span className="text-xs text-red-400">{error?.message}</span>
-        )}
       </label>
+      {invalid && (
+        <span className="text-xs text-red-400">{error?.message}</span>
+      )}
     </div>
   );
 };

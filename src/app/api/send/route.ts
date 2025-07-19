@@ -1,4 +1,4 @@
-import { ContactProps } from "@src/components/contact-form/types";
+import { ContactProps } from "@components/contact-form/types";
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { readHtmlTemplate, renderTemplate } from "./helpers";

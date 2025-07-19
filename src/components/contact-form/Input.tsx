@@ -1,5 +1,6 @@
 import { Control, useController } from "react-hook-form";
 import { ContactProps } from "./types";
+import { checkInvalidClass } from "@utils/functions";
 
 interface Props {
   control: Control<ContactProps>;
@@ -15,26 +16,23 @@ export const Input = ({ control, name, label, type, disabled }: Props) => {
     fieldState: { invalid, error },
   } = useController({ name, control });
 
-  const checkValidation = (): React.ComponentProps<"input">["className"] =>
-    invalid ? "!border-red-300 border-2" : "border-gray-300";
-
+  const invalidClassName = checkInvalidClass(invalid);
   return (
     <div className="w-full">
       <label htmlFor={name}>
         <span className="text-sm font-medium text-gray-700">{label}</span>
-
         <input
           {...field}
           aria-invalid={invalid}
           type={type}
           id={name}
-          className={`${checkValidation()} mt-0.5 w-full p-2 rounded  shadow-sm sm:text-sm focus-visible:outline-[var(--clr-accent)] transition-colors duration-300`}
+          className={`${invalidClassName} mt-0.5 w-full p-2 rounded shadow-sm sm:text-sm focus-visible:outline-[var(--clr-accent)] transition-colors duration-300`}
           disabled={disabled}
         />
-        {invalid && (
-          <span className="text-xs text-red-400">{error?.message}</span>
-        )}
       </label>
+      {invalid && (
+        <span className="text-xs text-red-400">{error?.message}</span>
+      )}
     </div>
   );
 };

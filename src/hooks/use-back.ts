@@ -1,4 +1,4 @@
-import { ROUTER_PATHS } from "@src/utils/constants";
+import { ROUTER_PATHS } from "@utils/constants";
 import { usePathname, useRouter } from "next/navigation";
 
 export const useBack = () => {

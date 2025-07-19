@@ -1,5 +1,5 @@
-import { CustomPage } from "@src/components/shared/page";
-import { ROUTER_PATHS } from "@src/utils/constants";
+import { CustomPage } from "@components/shared/page";
+import { ROUTER_PATHS } from "@utils/constants";
 import Link from "next/link";
 import React from "react";
 

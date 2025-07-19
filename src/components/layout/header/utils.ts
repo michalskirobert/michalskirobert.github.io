@@ -1,4 +1,4 @@
-import { ROUTER_PATHS } from "@src/utils/constants";
+import { ROUTER_PATHS } from "@utils/constants";
 
 export const appLinks: { label: string; href: string }[] = [
   { label: "Home", href: ROUTER_PATHS.HOME },

@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import styles from "./styles.module.scss";
 import { CustomLoader } from "../loader";
 
-interface Props extends React.ComponentProps<"button"> {
+export interface CustomButtonProps extends React.ComponentProps<"button"> {
   content: string;
   icon?: ReactNode;
   isLoading?: boolean;
@@ -15,7 +15,7 @@ export const CustomButton = ({
   icon,
   isLoading,
   ...restProps
-}: Props) => (
+}: CustomButtonProps) => (
   <button
     {...restProps}
     className={`${

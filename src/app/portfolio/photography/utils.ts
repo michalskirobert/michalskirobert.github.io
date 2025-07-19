@@ -35,7 +35,7 @@ import packshot6 from "@public/portfolio/photography/packshots/packshot_6.jpg";
 import packshot7 from "@public/portfolio/photography/packshots/packshot_7.jpg";
 import packshot8 from "@public/portfolio/photography/packshots/packshot_8.jpg";
 
-import { PhotographyPortfolioItem } from "@src/components/photography-portfolio-list/utils";
+import { PhotographyPortfolioItem } from "@components/photography-portfolio-list/utils";
 
 export const portfolioList: PhotographyPortfolioItem[] = [
   {

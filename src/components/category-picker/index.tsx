@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { useBack } from "@src/hooks/use-back";
+import { useBack } from "@hooks/use-back";
 import { FaArrowLeft } from "react-icons/fa";
 
 import photographyOffer from "@public/assets/photography_offer_grid.jpg";
@@ -32,14 +32,14 @@ const CategoryPicker = ({ type }: Props) => {
       <div className="flex flex-wrap justify-center items-center gap-2">
         <Link href={`/${type}/photography`}>
           <CustomImage
-            className="!w-full !max-h-[300px] object-cover shadow-bs"
+            className="!w-[300px] !h-[300px] object-cover shadow-bs"
             src={photographyOffer}
             alt={type}
           />
         </Link>
         <Link href={`/${type}/software`}>
           <Image
-            className="!w-full !max-h-[300px] object-cover shadow-bs"
+            className="!w-[300px] !h-[300px] object-cover shadow-bs"
             src={softwareOffer}
             alt={type}
             width={0}

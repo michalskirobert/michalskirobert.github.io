@@ -8,8 +8,8 @@ import {
 
 import { ToastProvider } from "./providers/toast-context";
 
-import Header from "@src/components/layout/header";
-import Footer from "@src/components/layout/footer";
+import Header from "@components/layout/header";
+import Footer from "@components/layout/footer";
 
 import "./globals.css";
 import { ToastSetter } from "./lib/toast";
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "NurByte - Robert Michalski",
     description:
       "Explore software engineering and photography portfolios by Robert Michalski.",
-    url: "https://nurbyte.com",
+    url: "https://nurbyte.vercel.app",
     siteName: "NurByte",
     images: [
       {

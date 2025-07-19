@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
 
-import { ContactProps } from "@src/components/contact-form/types";
+import { ContactProps } from "@components/contact-form/types";
 import { useForm } from "react-hook-form";
 
-import { Input } from "../../components/contact-form/Input";
-import { Textarea } from "../../components/contact-form/Textarea";
-import { CustomButton } from "@shared/button";
+import { Input } from "@components/contact-form/Input";
+import { Textarea } from "@components/contact-form/Textarea";
 import { LoadingBlocker } from "@shared/loading-blocker";
 import { FaPlane } from "react-icons/fa";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -16,6 +15,7 @@ import { toast } from "@lib/toast";
 import axios from "axios";
 import { DEFAULT_VALUES } from "./utils";
 import { ContactResponseProps } from "@src/app/api/send/types";
+import TextCaptcha from "../shared/captcha";
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -88,7 +88,16 @@ const ContactForm = () => {
             }}
           />
         </div>
-        <CustomButton {...{ content: "Send", icon: <FaPlane />, isLoading }} />
+        <TextCaptcha
+          buttonParams={{
+            ...{
+              content: "Send",
+              icon: <FaPlane />,
+              isLoading,
+              type: "submit",
+            },
+          }}
+        />
       </form>
     </LoadingBlocker>
   );

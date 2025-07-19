@@ -52,7 +52,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         delete hideTimeouts.current[id];
         delete removeTimeouts.current[id];
       }, 300);
-    }, 2700);
+    }, 5000);
   }, []);
 
   const removeToast = (id: string) => {
@@ -95,7 +95,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   return (
     <ToastContext.Provider value={{ addToast }}>
       {children}
-      <div className="fixed top-6 right-6 z-50 flex flex-col gap-4">
+      <div className="fixed top-2 right-0 md:top-6 md:right-6 z-50 flex flex-col gap-4">
         {toasts.map(({ id, type, message, visible }) => (
           <div
             key={id}
@@ -103,7 +103,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
             onMouseEnter={() => onMouseEnter(id)}
             onMouseLeave={() => onMouseLeave(id)}
             className={`
-              rounded-md border border-gray-300 bg-white p-4 shadow-sm w-[300px] cursor-pointer
+              rounded-md border border-gray-300 bg-white p-4 shadow-sm w-[100vw] md:w-[300px] cursor-pointer
               transform transition duration-300 ease-in-out
               ${
                 visible
