@@ -3,6 +3,8 @@ import { CustomPage } from "@components/shared/page";
 import { portfolioList } from "./utils";
 
 import softwareImage from "@public/assets/software_offer_grid.jpg";
+import Link from "next/link";
+import { ROUTER_PATHS } from "@src/utils/constants";
 
 export const generateMetadata = async () => {
   return {

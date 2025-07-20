@@ -4,6 +4,8 @@ import { useState } from "react";
 import { FILTER, FilterType, PhotographyPortfolioItem } from "./utils";
 import { CustomImage } from "@shared/image";
 import { ImageModal } from "./image-modal";
+import Link from "next/link";
+import { ROUTER_PATHS } from "@src/utils/constants";
 
 interface Props {
   portfolioList: PhotographyPortfolioItem[];
@@ -29,6 +31,13 @@ const PortfolioList = ({ portfolioList }: Props) => {
 
   return (
     <div className="relative flex flex-wrap gap-3 mt-5">
+      <h4 className="text-sm font-medium">
+        Enjoyed the portfolio? Take a look at my{" "}
+        <Link href={ROUTER_PATHS.OFFER_PHOTOGRAPHY} className="!text-sm">
+          full offer
+        </Link>
+        .
+      </h4>
       <div className="inline-flex w-full divide-x divide-amber-400 rounded bg-[var(--clr-accent)] shadow-sm transition-colors duration-500 ease-out">
         {Object.values(FILTER).map((filter) => (
           <button

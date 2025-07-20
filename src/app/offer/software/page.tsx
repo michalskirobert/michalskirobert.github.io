@@ -48,8 +48,8 @@ export default function SoftwareOffer() {
         </p>
         <p>
           Curious about my past work? Check out my{" "}
-          <Link href={ROUTER_PATHS.OFFER_SOFTWARE}>portfolio</Link> to see some
-          of my recent projects.
+          <Link href={ROUTER_PATHS.PORTFOLIO_SOFTWARE}>portfolio</Link> to see
+          some of my recent projects.
         </p>
         <p>
           Occasionally, I&apos;m also available in Singapore, Malaysia, and

@@ -36,29 +36,47 @@ export default function PhotographyOffer() {
           <li>
             <strong>Portrait photography</strong>
             <ul className="list-disc pl-5 mt-1">
-              <li>Studio session without MUA: from 400 zł per hour</li>
-              <li>Studio session with MUA: from 600 zł per hour</li>
-              <li>Outdoor session without MUA: from 350 zł per hour</li>
-              <li>Outdoor session with MUA: from 550 zł per hour</li>
+              <li>
+                Studio session without MUA: from 400 zł — includes 10 retouched
+                photos
+              </li>
+              <li>
+                Studio session with MUA: from 600 zł — includes 10 retouched
+                photos
+              </li>
+              <li>
+                Outdoor session without MUA: from 350 zł — includes 10 retouched
+                photos
+              </li>
+              <li>
+                Outdoor session with MUA: from 550 zł — includes 10 retouched
+                photos
+              </li>
             </ul>
           </li>
           <li>
             <strong>Landscape and nature photography</strong>
             <ul className="list-disc pl-5 mt-1">
-              <li>Outdoor session: from 400 zł per hour</li>
+              <li>
+                Outdoor session: from 400 zł — includes 10 retouched photos
+              </li>
             </ul>
           </li>
           <li>
             <strong>Product and commercial photography</strong>
             <ul className="list-disc pl-5 mt-1">
-              <li>Studio shoot: from 500 zł per hour</li>
-              <li>On-location shoot: from 550 zł per hour</li>
+              <li>Studio shoot: from 500 zł — includes 10 retouched photos</li>
+              <li>
+                On-location shoot: from 550 zł — includes 10 retouched photos
+              </li>
             </ul>
           </li>
           <li>
             <strong>Photo editing and retouching services</strong>
             <ul className="list-disc pl-5 mt-1">
-              <li>From 100 zł per photo (final price depends on complexity)</li>
+              <li>
+                From 25~100 zł per photo (final price depends on complexity)
+              </li>
             </ul>
           </li>
         </ul>
@@ -72,8 +90,8 @@ export default function PhotographyOffer() {
         </p>
         <p>
           Curious about my past work? Check out my{" "}
-          <Link href={ROUTER_PATHS.OFFER_PHOTOGRAPHY}>portfolio</Link> to see
-          some of my recent projects.
+          <Link href={ROUTER_PATHS.PORTFOLIO_PHOTOGRAPHY}>portfolio</Link> to
+          see some of my recent projects.
         </p>
         <p>
           Occasionally, I&apos;m also available in Singapore, Malaysia, and

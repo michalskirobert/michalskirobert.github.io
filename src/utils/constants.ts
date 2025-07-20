@@ -2,6 +2,8 @@ export const ROUTER_PATHS = {
   HOME: "/",
   ABOUT_ME: "/about-me",
   PORTFOLIO: "/portfolio",
+  PORTFOLIO_PHOTOGRAPHY: "/portfolio/photography",
+  PORTFOLIO_SOFTWARE: "/portfolio/software",
   CONTACT: "/contact",
   OFFER: "/offer",
   OFFER_PHOTOGRAPHY: "/offer/photography",
