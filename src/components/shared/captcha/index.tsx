@@ -19,7 +19,7 @@ interface CaptchaData {
 interface Props {
   children: ReactNode;
   buttonParams?: CustomButtonProps;
-  onVerified?: () => void;
+  onVerified: () => void;
 }
 
 export default function TextCaptcha({
@@ -44,21 +44,26 @@ export default function TextCaptcha({
   };
 
   const submit = async () => {
-    setAlert("");
-    setIsVeryfing(true);
-
-    if (!captcha) return;
-
     try {
+      setAlert("");
+      setIsVeryfing(true);
+
+      if (!answer) {
+        throw new Error("CAPTCHA cannot be left blank");
+      }
+
+      if (!captcha) return;
+
       await axios.post(API_ENDPOINTS.VERIFY_CAPTCHA, {
         token: captcha.token,
         userResponse: answer,
       });
 
-      if (onVerified) onVerified();
-    } catch {
-      getCaptcha();
-      setAlert("Incorrect input. Please try again.");
+      onVerified();
+    } catch (error) {
+      if (answer) getCaptcha();
+      if (error instanceof Error)
+        setAlert(error?.message || "Incorrect input. Please try again.");
     } finally {
       setAnswer("");
       setIsVeryfing(false);

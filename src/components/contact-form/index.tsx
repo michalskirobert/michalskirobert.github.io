@@ -21,20 +21,20 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { control, reset, getValues, trigger } = useForm<ContactProps>({
-    mode: "onSubmit",
     defaultValues: DEFAULT_VALUES,
     resolver: yupResolver(validationSchema),
   });
 
   const onSave = async () => {
     try {
-      setIsLoading(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
-      
+
       const isValid = await trigger();
 
-      if(!isValid) return;
-      
+      if (!isValid) return;
+
+      setIsLoading(true);
+
       const data = getValues();
       const resp = await axios.post<ContactResponseProps>(
         API_ENDPOINTS.SEND_CONTACT_FORM,
