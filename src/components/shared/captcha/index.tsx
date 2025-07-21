@@ -19,12 +19,14 @@ interface CaptchaData {
 interface Props {
   children: ReactNode;
   buttonParams?: CustomButtonProps;
+  validate?: () => Promise<boolean>;
   onVerified: () => void;
 }
 
 export default function TextCaptcha({
   children,
   buttonParams,
+  validate,
   onVerified,
 }: Props) {
   const { content, isLoading, ...restButtonParams } = buttonParams || {};
@@ -34,7 +36,7 @@ export default function TextCaptcha({
   const [captcha, setCaptcha] = useState<CaptchaData | null>(null);
   const [answer, setAnswer] = useState("");
   const [alert, setAlert] = useState("");
-  const [isVeryfing, setIsVeryfing] = useState(false);
+  const [isVerifying, setIsVerifying] = useState(false);
 
   const invalidClassName = checkInvalidClass(!!alert);
 
@@ -44,29 +46,40 @@ export default function TextCaptcha({
   };
 
   const submit = async () => {
+    if (validate && !(await validate())) return;
+
+    if (!answer) {
+      setAlert("CAPTCHA cannot be left blank");
+      return;
+    }
+
+    if (!captcha) return;
+
     try {
-      setAlert("");
-      setIsVeryfing(true);
-
-      if (!answer) {
-        throw new Error("CAPTCHA cannot be left blank");
-      }
-
-      if (!captcha) return;
+      setIsVerifying(true);
 
       await axios.post(API_ENDPOINTS.VERIFY_CAPTCHA, {
         token: captcha.token,
         userResponse: answer,
       });
 
+      setAlert("");
+      setAnswer("");
       onVerified();
     } catch (error) {
-      if (answer) getCaptcha();
-      if (error instanceof Error)
-        setAlert(error?.message || "Incorrect input. Please try again.");
+      if (answer) {
+        getCaptcha();
+        setAnswer("");
+      }
+
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Incorrect input. Please try again.";
+
+      setAlert(message);
     } finally {
-      setAnswer("");
-      setIsVeryfing(false);
+      setIsVerifying(false);
     }
   };
 
@@ -77,7 +90,7 @@ export default function TextCaptcha({
   }, []);
 
   return (
-    <LoadingBlocker isLoading={isVeryfing || !!isLoading}>
+    <LoadingBlocker isLoading={isVerifying || !!isLoading}>
       {children}
       {!captcha ? (
         <CaptchaSkeleton />
@@ -95,13 +108,13 @@ export default function TextCaptcha({
               type="text"
               value={answer}
               onChange={(e) => setAnswer(e.target.value)}
-              disabled={isVeryfing}
+              disabled={isVerifying}
               className={`${invalidClassName} mt-0.5 w-full p-2 rounded  shadow-sm sm:text-sm focus-visible:outline-[var(--clr-accent)] transition-colors duration-300`}
               placeholder="Enter the text shown"
             />
             <CustomButton
               {...restButtonParams}
-              isLoading={isLoading || isVeryfing}
+              isLoading={isLoading || isVerifying}
               content={content || "Verify"}
               onClick={submit}
             />

@@ -21,9 +21,12 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const { control, reset, getValues, trigger } = useForm<ContactProps>({
+    mode: "all",
     defaultValues: DEFAULT_VALUES,
     resolver: yupResolver(validationSchema),
   });
+
+  const handleValidation = async () => await trigger();
 
   const onSave = async () => {
     try {
@@ -56,6 +59,7 @@ const ContactForm = () => {
   return (
     <TextCaptcha
       onVerified={onSave}
+      validate={handleValidation}
       buttonParams={{
         content: "Send",
         icon: <FaPlane />,
