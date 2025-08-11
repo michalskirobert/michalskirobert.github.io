@@ -1,6 +1,7 @@
 import mainPage from "@public/portfolio/software/main-page.jpg";
 import indpol from "@public/portfolio/software/indpol.jpg";
 import quranTime from "@public/portfolio/software/quran_time_react_native.png";
+import saro from "@public/portfolio/software/saro.jpg";
 
 import { SoftwarePortfolioItem } from "@components/software-portfolio-list/utils";
 
@@ -36,5 +37,12 @@ export const portfolioList: SoftwarePortfolioItem[] = [
     ],
     title: "Quran time",
     repoUrl: "https://github.com/michalskirobert/quran-time/tree/master",
+  },
+  {
+    src: saro,
+    technologies: ["HTML", "CSS3", "PHP", "Vanilla JS", "jQuery", "AJAX"],
+    title: "Saro - website to learn Polish (my old project)",
+    repoUrl: "https://github.com/michalskirobert/SARO",
+    previewUrl: "https://saro-seven.vercel.app",
   },
 ];
