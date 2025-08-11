@@ -58,14 +58,16 @@ const PortfolioList = ({ portfolioList }: Props) => {
                       }
                     />
                   </Link>
-                  <Link
-                    className="!text-[var(--clr-secondary)] !text-2xl"
-                    href={previewUrl || ""}
-                    target="_blank"
-                    title="View live site"
-                  >
-                    <MdPreview />
-                  </Link>
+                  {previewUrl && (
+                    <Link
+                      className="!text-[var(--clr-secondary)] !text-2xl"
+                      href={previewUrl}
+                      target="_blank"
+                      title="View live site"
+                    >
+                      <MdPreview />
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

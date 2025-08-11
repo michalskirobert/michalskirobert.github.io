@@ -1,5 +1,7 @@
 import mainPage from "@public/portfolio/software/main-page.jpg";
 import indpol from "@public/portfolio/software/indpol.jpg";
+import quranTime from "@public/portfolio/software/quran_time_react_native.png";
+
 import { SoftwarePortfolioItem } from "@components/software-portfolio-list/utils";
 
 export const portfolioList: SoftwarePortfolioItem[] = [
@@ -23,5 +25,16 @@ export const portfolioList: SoftwarePortfolioItem[] = [
     title: "Indpol - sklep indonezyjski",
     previewUrl: "https://indpol.pl",
     repoUrl: "https://github.com/michalskirobert/indpol-store",
+  },
+  {
+    src: quranTime,
+    technologies: [
+      "react-native.js",
+      "i18n",
+      "Quran API",
+      "react-native-paper",
+    ],
+    title: "Quran time",
+    repoUrl: "https://github.com/michalskirobert/quran-time/tree/master",
   },
 ];
